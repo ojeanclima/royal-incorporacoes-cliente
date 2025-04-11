@@ -1,0 +1,145 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "array",
+	"items": {
+		"type": "object",
+		"properties": {
+			"type": {
+				"type": "string"
+			},
+			"settings": {
+				"type": "object"
+			},
+			"conditions": {
+				"type": "array"
+			},
+			"events": {
+				"type": "array"
+			}
+		},
+		"required": [
+			"type"
+		],
+		"allOf": [
+			{
+				"if": {
+					"properties": {
+						"type": {
+							"const": "send_email"
+						}
+					}
+				},
+				"then": {
+					"properties": {
+						"settings": {
+							"$ref": "#/definitions/send_email"
+						}
+					}
+				}
+			},
+			{
+				"if": {
+					"properties": {
+						"type": {
+							"const": "reset_password"
+						}
+					}
+				},
+				"then": {
+					"properties": {
+						"settings": {
+							"$ref": "#/definitions/reset_password"
+						}
+					}
+				}
+			}
+		]
+	},
+	"definitions": {
+		"send_email": {
+			"type": "object",
+			"properties": {
+				"mail_to": {
+					"type": "string",
+					"enum": [
+						"admin",
+						"form",
+						"custom"
+					]
+				},
+				"subject": {
+					"type": "string"
+				},
+				"content": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"content",
+				"mail_to"
+			],
+			"anyOf": [
+				{
+					"if": {
+						"properties": {
+							"mail_to": {
+								"const": "custom"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"custom_email": {
+								"type": "string"
+							}
+						},
+						"required": [
+							"custom_email"
+						]
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"mail_to": {
+								"const": "form"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"from_field": {
+								"type": "string"
+							}
+						},
+						"required": [
+							"from_field"
+						]
+					}
+				}
+			]
+		},
+		"reset_password": {
+			"type": "object",
+			"properties": {
+				"user_field": {
+					"type": "string"
+				},
+				"password_field": {
+					"type": "string"
+				},
+				"confirm_password_field": {
+					"type": "string"
+				},
+				"email": {
+					"type": "boolean"
+				}
+			},
+			"required": [
+				"user_field",
+				"password_field",
+				"confirm_password_field"
+			]
+		}
+	}
+}

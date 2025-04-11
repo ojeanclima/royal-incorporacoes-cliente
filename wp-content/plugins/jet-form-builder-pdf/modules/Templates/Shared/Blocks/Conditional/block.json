@@ -1,0 +1,21 @@
+{
+	"apiVersion": 2,
+	"name": "jet-bl-tmpl/conditional",
+	"title": "Conditional Block",
+	"category": "design",
+	"textdomain": "jet-from-builder-pdf",
+	"supports": {
+		"customClassName": false,
+		"html": false
+	},
+	"attributes": {
+		"conditions": {
+			"type": "array",
+			"default": []
+		},
+		"funcType": {
+			"type": "string",
+			"default": "show"
+		}
+	}
+}

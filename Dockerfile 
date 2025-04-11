@@ -5,4 +5,5 @@ RUN apt-get update && apt-get install -y \
     git \
     unzip \
     && rm -rf /var/lib/apt/lists/*
-~~
+
+COPY ./php.ini /usr/local/etc/php/php.ini

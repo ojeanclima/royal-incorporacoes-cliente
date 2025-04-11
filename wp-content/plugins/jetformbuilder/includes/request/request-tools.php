@@ -1,0 +1,188 @@
+<?php
+
+
+namespace Jet_Form_Builder\Request;
+
+use Jet_Form_Builder\Classes\Resources\File;
+use Jet_Form_Builder\Classes\Resources\File_Tools;
+use Jet_Form_Builder\Classes\Resources\Media_Block_Value;
+use Jet_Form_Builder\Classes\Resources\Sanitize_File_Exception;
+use Jet_Form_Builder\Classes\Resources\File_Collection;
+use Jet_Form_Builder\Classes\Resources\Uploaded_Collection;
+use Jet_Form_Builder\Classes\Resources\Uploaded_File;
+use Jet_Form_Builder\Classes\Tools;
+use Jet_Form_Builder\Live_Form;
+
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
+
+class Request_Tools {
+
+	const FILE_PROPERTIES = array( 'name', 'size', 'error', 'type', 'tmp_name' );
+
+	public static function get_files( array $initial ): array {
+		$response = array();
+
+		foreach ( $initial as $fields_name => $files ) {
+			$is_collection = isset( $files['name'] ) && is_array( $files['name'] );
+			$is_repeater   = false;
+
+			if ( $is_collection ) {
+				// check the first item
+				foreach ( $files['name'] as $key => $first_item ) {
+					$is_repeater = is_numeric( $key ) && is_array( $first_item );
+					break;
+				}
+			}
+
+			if ( $is_repeater ) {
+				$response[ $fields_name ] = static::get_repeater_files( $files );
+
+				continue;
+			}
+
+			if ( ! $is_collection ) {
+				try {
+					$file = new File( $files );
+				} catch ( Sanitize_File_Exception $exception ) {
+					continue;
+				}
+				$response[ $fields_name ] = $file;
+
+				continue;
+			}
+
+			$count_collection = count( $files['name'] );
+			$collection       = array();
+
+			for ( $index = 0; $index < $count_collection; $index++ ) {
+				$file = array();
+
+				foreach ( self::FILE_PROPERTIES as $property ) {
+					$file[ $property ] = $files[ $property ][ $index ];
+				}
+
+				$collection[ $index ] = $file;
+			}
+
+			$response[ $fields_name ] = ( new File_Collection() )->push_files( $collection );
+		}
+
+		return $response;
+	}
+
+	public static function get_request(): array {
+		// phpcs:ignore WordPress.Security.NonceVerification.Missing
+		$request = Tools::sanitize_recursive( wp_unslash( $_POST ) );
+
+		/**
+		 * We need to be sure, that repeater rows starts from 0 index
+		 * and they have correct incrementing with order
+		 */
+		foreach ( $request as &$value ) {
+			if ( ! wp_is_numeric_array( $value ) ) {
+				continue;
+			}
+			$value = array_values( $value );
+		}
+
+		return $request;
+	}
+
+	public static function get_repeater_files( array $files ): array {
+		$indexes  = array_keys( $files['name'] );
+		$repeater = array();
+
+		foreach ( $indexes as $current ) {
+			$row = array();
+
+			foreach ( self::FILE_PROPERTIES as $property ) {
+				foreach ( $files[ $property ][ $current ] as $field_name => $values ) {
+					if ( ! isset( $row[ $field_name ] ) ) {
+						$row[ $field_name ] = array();
+					}
+
+					if ( is_array( $values ) ) {
+						$count_values = count( $values );
+
+						for ( $index_value = 0; $index_value < $count_values; $index_value++ ) {
+							if ( ! isset( $row[ $field_name ][ $index_value ] ) ) {
+								$row[ $field_name ][ $index_value ] = array();
+							}
+							$row[ $field_name ][ $index_value ][ $property ] = $values[ $index_value ];
+						}
+					} else {
+						$row[ $field_name ][ $property ] = $values;
+					}
+				}
+			}
+			unset( $field_name, $values );
+
+			foreach ( $row as $field_name => $values ) {
+				if ( isset( $values[0] ) ) {
+					$row[ $field_name ] = ( new File_Collection() )->push_files( $values );
+				} else {
+					try {
+						$file = new File( $values );
+					} catch ( Sanitize_File_Exception $exception ) {
+						unset( $row[ $field_name ] );
+						continue;
+					}
+					$row[ $field_name ] = $file;
+				}
+			}
+
+			$repeater[] = $row;
+		}
+
+		return $repeater;
+	}
+
+
+	/**
+	 * @param string $field_name
+	 *
+	 * @return false|Media_Block_Value
+	 */
+	public static function get_file( string $field_name ) {
+		$file = jet_fb_context()->get_file( $field_name );
+
+		if ( false !== $file ) {
+			return $file;
+		}
+
+		$file_data = jet_fb_context()->get_value( $field_name );
+
+		// parse value in json format (both)
+		if ( is_string( $file_data ) && ! is_numeric( $file_data ) ) {
+			$decoded = Tools::decode_json( $file_data );
+
+			if ( ! is_null( $decoded ) ) {
+				$file_data = $decoded;
+			}
+		}
+
+		if ( is_string( $file_data ) ) {
+			$file_data = explode( ',', $file_data );
+		}
+
+		if ( ! is_array( $file_data ) ) {
+			return false;
+		}
+
+		if ( empty( $file_data[0] ) ) {
+			return File_Tools::create_uploaded_file( $file_data );
+		}
+
+		$collection = array();
+
+		foreach ( $file_data as $item ) {
+			$collection[] = File_Tools::create_uploaded_file( $item );
+		}
+
+		return new Uploaded_Collection( $collection );
+	}
+
+}
