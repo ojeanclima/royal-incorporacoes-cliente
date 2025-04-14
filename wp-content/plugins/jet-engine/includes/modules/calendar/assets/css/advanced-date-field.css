@@ -1,0 +1,293 @@
+.jet-engine-advanced-date-field__switch {
+	position: relative;
+	display: inline-block;
+	width: 54px;
+	height: 20px;
+}
+
+input.jet-engine-advanced-date-field__switch-input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+/* The slider */
+.jet-engine-advanced-date-field__switch-slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #eceeef;
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.15);
+	-webkit-transition: .4s;
+	transition: .4s;
+	border-radius: 10px;
+}
+
+.jet-engine-advanced-date-field__switch-slider:before {
+	position: absolute;
+	content: "";
+	background-color: white;
+	width: 18px;
+	height: 18px;
+	margin: 1px;
+	top: 0;
+	left: 0;
+	border-radius: 50%;
+	transition: all 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+	box-sizing: border-box;
+	z-index: 3;
+}
+
+.jet-engine-advanced-date-field__switch-input:checked + .jet-engine-advanced-date-field__switch-slider {
+	background-color: #49c66a;
+}
+
+.jet-engine-advanced-date-field__switch-input:checked + .jet-engine-advanced-date-field__switch-slider:before {
+	transform: translateX(34px);
+}
+
+.jet-engine-advanced-date-field__date {
+	display: flex;
+	gap: 15px;
+	align-items: flex-start;
+	padding: 0 0 10px;
+	min-height: 38px;
+	box-sizing: border-box;
+}
+
+.jet-engine-advanced-date-field__date-warp {
+	flex: 1 1 auto;
+}
+
+.jet-engine-advanced-date-field__time + input {
+	flex: 0 0 30%;
+}
+.jet-engine-advanced-date-field__end-time + input {
+	flex: 0 0 30%;
+}
+
+.jet-engine-advanced-date-field__date-controls {
+	display: flex;
+	gap: 15px;
+}
+
+.jet-engine-advanced-date-field__end-date-controls {
+	display: flex;
+	gap: 15px;
+	flex: 1 1 auto;
+	align-items: flex-start;
+}
+
+.jet-engine-advanced-date-field__date > span {
+	flex: 0 0 auto;
+}
+
+.jet-engine-advanced-date-field__is-recurring {
+	display: flex;
+	gap: 15px;
+	padding: 0 0 10px;
+	min-height: 38px;
+	align-items: center;
+	box-sizing: border-box;
+}
+
+.jet-engine-advanced-date-field__switch-wrap {
+	padding: 4px 0 0 0;
+}
+
+.jet-engine-advanced-date-field__label {
+	min-width: 80px;
+	padding: 4px 0 0 0;
+}
+
+.jet-engine-advanced-date-field__recurring-row {
+	display: flex;
+	gap: 15px;
+	align-items: center;
+	padding: 0 0 15px;
+}
+
+.jet-engine-advanced-date-field__recurring-content {
+	display: flex;
+	gap: 15px;
+	align-items: center;
+	flex: 1 0 auto;
+}
+
+.jet-engine-advanced-date-field--tiny .jet-engine-advanced-date-field__recurring-row {
+	flex-direction: column;
+	gap: 5px;
+	align-items: stretch;
+}
+
+.jet-engine-advanced-date-field--tiny .jet-engine-advanced-date-field__recurring-content {
+	gap: 5px;
+	flex: 0 0 100%;
+}
+
+.jet-engine-advanced-date-field--tiny .jet-engine-advanced-date-field__recurring-content select.cx-ui-select,
+.jet-engine-advanced-date-field--tiny .jet-engine-advanced-date-field__recurring-content input.cx-ui-text {
+	min-width: 75px;
+	width: 75px;
+}
+
+.jet-engine-advanced-date-field__weekdays {
+	display: flex;
+	flex: 0 0 100%;
+	overflow: hidden;
+	border: 1px solid #dcdcdc;
+	border-radius: 2px;
+}
+
+.jet-engine-advanced-date-field--tiny .label-weekdays {
+	display: none;
+}
+
+.jet-engine-advanced-date-field__weekdays label {
+	flex: 0 0 14.285%;
+	box-sizing: border-box;
+	position: relative;
+	text-align: center;
+	border-left: 1px solid #dcdcdc;
+	padding: 5px;
+}
+
+.jet-engine-advanced-date-field__weekdays label:first-child {
+	border-left: none;
+}
+
+.jet-engine-advanced-date-field__weekdays label input {
+	position: absolute;
+	opacity: 0;
+}
+
+.jet-engine-advanced-date-field__weekday-label {
+	position:relative;
+	z-index: 2;
+}
+
+.jet-engine-advanced-date-field__weekdays label input:checked ~ .jet-engine-advanced-date-field__weekday-marker {
+	position:absolute;
+	z-index: 1;
+	left:0;
+	right:0;
+	top: 0;
+	bottom:0;
+	background: #eceeef;
+}
+
+.jet-engine-advanced-date-field__monthly {
+	flex: 1 1 auto;
+}
+
+.jet-engine-advanced-date-field__monthly-row {
+	display: flex;
+	gap: 15px;
+	align-items: center;
+}
+
+.jet-engine-advanced-date-field__monthly-row + .jet-engine-advanced-date-field__monthly-row {
+	padding: 15px 0 0 0;
+}
+
+.jet-engine-advanced-date-field__monthly-row label {
+	flex: 0 0 80px;
+}
+
+.jet-engine-advanced-date-field__repeater-row {
+	position: relative;
+	padding: 14px 30px 0 0;
+	border-top: 1px solid rgba( 0, 0, 0, .1 );
+	&:first-child {
+		padding-top: 0;
+		border-top: none;
+		.jet-engine-advanced-date-field__repeater-delete {
+			top: 1px;
+		}
+	}
+}
+
+.jet-engine-advanced-date-field__repeater-delete {
+	position:absolute;
+	right:0;
+	top:15px;
+}
+
+button.jet-engine-advanced-date-field__repeater-delete-button {
+	width:25px;
+	height: 25px;
+	border: none;
+	padding:0;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	cursor: pointer;
+	background: none;
+	box-shadow: none;
+	color: #cc1818;
+	path {
+		fill: currentColor;
+	}
+}
+
+.jet-engine-advanced-date-field__repeater-confirm {
+	position: absolute;
+	width: 80px;
+	background: #1e1e1e;
+	color: #fff;
+	padding: 3px 0;
+	font-size: 11px;
+	line-height: 14px;
+	box-sizing: border-box;
+	left: 50%;
+	margin: 0 0 5px -40px;
+	bottom: 100%;
+	text-align: center;
+	display: none;
+	&:after {
+		position:absolute;
+		content:'';
+		width: 0px;
+		height: 0px;
+		top: 100%;
+		left:50%;
+		margin-left: -4px;
+		border-style: solid;
+		border-width: 4px 4px 0 4px;
+		border-color: #1E1E1E transparent transparent transparent;
+		transform: rotate(0deg);
+	}
+}
+
+.show-confirm .jet-engine-advanced-date-field__repeater-confirm {
+	display: block;
+}
+
+.jet-engine-advanced-date-field__repeater-confirm-yes,
+.jet-engine-advanced-date-field__repeater-confirm-no {
+	display: inline-flex;
+	opacity: .8;
+	text-decoration: underline dashed;
+	padding: 2px 3px;
+	margin: 0 2px;
+	cursor: pointer;
+	&:hover {
+		opacity: 1;
+	}
+}
+
+button.jet-engine-advanced-date-field__repeater-new {
+	border: none;
+	padding:0;
+	cursor: pointer;
+	background: none;
+	box-shadow: none;
+	color: #298ffc;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+

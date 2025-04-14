@@ -1,0 +1,83 @@
+.jet-engine-edit-page {
+	&.jet-data-table-page {
+		border-top: none;
+		flex-wrap: wrap;
+		.cx-vui-repeater {
+			padding: 10px 0 15px;
+		}
+		.jet-engine-edit-page__fields {
+			flex: 0 0 calc( 100% - 430px );
+		}
+		.cx-vui-repeater-item {
+			box-shadow: 0 1px 6px rgba( 35, 40, 45, .15 );
+			&.cx-vui-panel {
+				margin: 0 0 15px;
+			}
+			&__heading {
+				padding: 12px 15px 11px;
+			}
+			.cx-vui-component {
+				padding: 10px 15px;
+			}
+			.cx-vui-component__label {
+				font-size: 14px;
+			}
+		}
+		.jet-engine-edit-page__actions {
+			padding-top: 0;
+		}
+	}
+	.jet-dynamic-table-preview {
+		flex: 0 0 100%;
+		max-width: 100%;
+		.jet-dynamic-table-reloading-preview {
+			opacity: .5;
+		}
+	}
+}
+
+.jet-engine-dynamic-table-styles__item {
+	border-top: 1px solid #ececec;
+	.cx-vui-collapse {
+		&__heading {
+			padding: 10px 20px;
+			color: #007cba;
+			font-weight: bold;
+			font-size: 15px;
+		}
+	}
+}
+
+.jet-table-switcher {
+	&__state {
+		display: inline-flex;
+		border-radius: 13px;
+		overflow: hidden;
+		margin: 0 0 0 20px;
+		box-shadow: 0 1px 6px rgba( 35, 40, 45, .07 );
+		&-item {
+			min-width: 80px;
+			padding: 5px;
+			text-align: center;
+			background: #f4f4f5;
+			color: #007cba;
+			font-weight: bold;
+			font-size: 14px;
+			line-height: 16px;
+			cursor: pointer;
+			&:hover {
+				background: #eaeaea;
+			}
+			&--active {
+				background: #007cba;
+				color: #fff;
+				cursor: default;
+				&:hover {
+					background: #007cba;
+					color: #fff;
+					cursor: default;
+				}
+			}
+		}
+	}
+}

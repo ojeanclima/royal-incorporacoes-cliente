@@ -1,0 +1,96 @@
+.jet-engine-query-edit-modal {
+    border: none;
+    border-radius: 5px;
+    width: 90vw;
+    height: 90vh;
+    overflow: hidden;
+    padding: 0;
+}
+
+.jet-engine-query-edit-modal iframe {
+    width: 100%;
+    height: 100%; 
+    border: none;
+}
+
+.jet-engine-query-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid black;
+    border-top-color: transparent;
+    border-radius: 50%;
+    -webkit-animation: jet-engine-query-spin 2s infinite linear;
+            animation: jet-engine-query-spin 2s infinite linear;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+.jet-engine-query-spinner.inactive {
+    display: none;
+}
+
+.jet-engine-query-edit-modal--close-button {
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+}
+
+@-webkit-keyframes jet-engine-query-spin {
+	0% {
+		transform: translate( -50%, -50% ) rotate(0deg);
+	}
+	100% {
+		transform: translate( -50%, -50% ) rotate(359deg);
+	}
+}
+
+@keyframes jet-engine-query-spin {
+	0% {
+		transform: translate( -50%, -50% ) rotate(0deg);
+	}
+	100% {
+		transform: translate( -50%, -50% ) rotate(359deg);
+	}
+}
+
+:has( >.jet-engine-frontend-query-editor-buttons ) {
+    position: relative;
+}
+
+.jet-engine-frontend-query-editor-buttons {
+    display: flex;
+    justify-content: end;
+    opacity: 0;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    transform: translateY(-90%);
+    z-index: 999;
+    padding: 0 15px;
+}
+
+:hover > .jet-engine-frontend-query-editor-buttons:has(> span.initialized), .jet-engine-frontend-query-editor-buttons:hover:has(> span.initialized) {
+    opacity: 1;
+}
+
+.jet-engine-frontend-query-editor-buttons span.edit-button {
+    background-color: #9d64ed;
+    color: #fff;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+    font-family: Roboto,-apple-system,BlinkMacSystemFont,"Segoe UI",Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+    padding: 2px 6px 3px;
+    border-radius: 3px;
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+         user-select: none;
+}

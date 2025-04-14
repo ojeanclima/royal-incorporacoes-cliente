@@ -1,0 +1,222 @@
+== Changelog ==
+
+= 3.0.8.6 =
+* Fixed: Custom login page redirects to the default WordPress login page when incorrect credentials are entered.
+
+= 3.0.8.5 =
+* Fixed: Cookie issue
+
+= 3.0.8.4 =
+* Fixed: Advert dismissing issue for Widget Options
+
+= 3.0.8.3 =
+* Improved: Compatibility PHP 8.1
+* Added: UserSync (Collaboration with FuseWP)
+
+= 3.0.8.0 =
+* Improved: Compatibility PHP 8
+* Improved: Compatibility with WP 6.2
+* Fixed: Assets URL
+* Updated: Plugin’s Description
+
+= 3.0.7.0 =
+* Added [LearnPress](https://loginwp.com/redirect-wordpress-users-after-login-learnpress/?ref=changelog) integration.
+* PHP 8 improvements.
+* Fixed Warning: Undefined array key "rul_first_login"
+* Added filter to execute integrations conditions last.
+
+= 3.0.6.0 =
+* Pro: [WishList Member integration](https://loginwp.com/redirect-wordpress-users-after-login-wishlist-members/?ref=changelog).
+
+= 3.0.5.0 =
+* Pro: [Paid Memberships Pro condition](https://loginwp.com/redirect-wordpress-users-after-login-paid-memberships-pro-levels/?ref=changelog).
+* Fixed error message: syntax error, unexpected ‘?’
+
+= 3.0.4.0 =
+* Pro: ["After First Login" condition](https://loginwp.com/article/redirect-wordpress-users-after-first-login/?ref=changelog).
+* Fixed: PHP Notice Trying to get property ‘user_login’ of non-object.
+
+= 3.0.3.0 =
+* Fixed bug with wp list pagination per page not working.
+
+= 3.0.2.0 =
+* Pro: Added [Polylang integration](https://loginwp.com/?utm_source=wprepo&utm_medium=changelog&utm_campaign=3020#pro-conditions)
+* Pro: Added [WPML integration](https://loginwp.com/?utm_source=wprepo&utm_medium=changelog&utm_campaign=3020#pro-conditions)
+* Fixed fatal error caused by other plugin metaboxes.
+
+= 3.0.1.1 =
+* Added logout support to all [Pro conditions](https://loginwp.com/?utm_source=wprepo&utm_medium=changelog&utm_campaign=4011#pro-conditions).
+* [Pro features](https://loginwp.com/pricing/?utm_source=wprepo&utm_medium=changelog&utm_campaign=4011) support for Uncanny Toolkit.
+
+= 3.0.1.0 =
+* Added [TutorLMS integration](https://loginwp.com/?utm_source=wprepo&utm_medium=changelog&utm_campaign=4010#pro-conditions).
+* Improved admin page loading speed.
+
+= 3.0.0.8 =
+* Added noncache to temporary redirects.
+* Added user_id placeholder.
+* Added wp_logout() redirection support
+
+= 3.0.0.7 =
+* Fix site and website url placeholder bug in multisite.
+
+= 3.0.0.6 =
+* Compatibility with WP 5.9.
+* Pro: Added [LearnDash](https://loginwp.com/?utm_source=wprepo&utm_medium=changelog&utm_campaign=3006#pro-conditions) Enrolled Course and User Group redirect conditions.
+* Pro: Added [WooCommerce](https://loginwp.com/?utm_source=wprepo&utm_medium=changelog&utm_campaign=3006#pro-conditions) Purchased Product, Purchased Product Category, Active User Subscription, Active Membership Plan redirect conditions.
+* Pro: Added [MemberPress](https://loginwp.com/?utm_source=wprepo&utm_medium=changelog&utm_campaign=3006#pro-conditions) Subscribed Membership redirect condition.
+* Pro: Added [Restrict Content Pro](https://loginwp.com/?utm_source=wprepo&utm_medium=changelog&utm_campaign=3006#pro-conditions) Has Membership redirect condition.
+* Pro: Added [LifterLMS](https://loginwp.com/?utm_source=wprepo&utm_medium=changelog&utm_campaign=3006#pro-conditions) Enrolled Course and Enrolled Membership redirect conditions.
+
+= 3.0.0.5 =
+* Added escaping to url fields in redirection UI
+* Added https://yoursite.tld/?loginwp_link_redirect=true for triggering login redirection.
+
+= 3.0.0.4 =
+* Prefixed class exist check with backslash.
+* [Pro] [Added MemberMouse integration](https://loginwp.com/pricing/?utm_source=wprepo&utm_medium=changelog&utm_campaign=3004).
+
+= 3.0.0.3 =
+* Fixed multisite installation bug.
+* Fixed issue where database migration didn't work.
+
+= 3.0.0.2 =
+* Fixed issue where placeholders wasn't getting saved as url.
+* Improved BuddyPress/BuddyBoss support.
+
+= 3.0.0.1 =
+* Fixed issue where placeholders wasn't getting saved as url.
+* Improved BuddyPress/BuddyBoss support.
+
+= 3.0.0.0 =
+* Rebranded to LoginWP name
+* UI revamp
+* [Pro plugin](https://loginwp.com/pricing/?utm_source=wprepo&utm_medium=changelog&utm_campaign=3-release) now available
+
+= 2.9.9 =
+* Fixed bug in multisite activation support.
+
+= 2.9.8 =
+* Added multisite support.
+
+= 2.9.7 =
+* Added option to redirect to any url specified.
+
+= 2.9.6 =
+* Added back php file url base redirect.
+
+= 2.9.5 =
+* Fixed: logout redirect not working.
+* Remove php file redirect option. No longer used by many or used at all.
+* Plugin redirection is only manageable by manage_categories capability. Removed option to change this.
+
+= 2.9.4 =
+* Fixed: Warning: is_readable(): open_basedir restriction.
+
+= 2.9.3 =
+* Move languages po/mo files into languages folder.
+
+= 2.9.2 =
+* 2019-02-23: Add CSRF protection (thanks RIPS!). Fixed translations for "username" variable instruction (thanks Jaime!).
+
+= 2.9.1 =
+* 2016-08-10: Support utf8mb4 encoding and prevent cross-site scripting when editing redirect URLs.
+
+= 2.9.0 =
+* 2015-09-25: Update translation text domain in order to support translate.wordpress.org translation system
+
+= 2.8.3 =
+* 2015-08-03: Add new URL variable "userslug" to match author URLs.
+
+= 2.8.2 =
+* 2014-09-06: Translation string fix.
+
+= 2.8.1 =
+* 2014-08-03: Support the deletion of rules referencing deleted user, roles, or levels.
+
+= 2.8.0 =
+* 2014-07-06: Improved management interface to add specific Edit and Delete buttons per rule, and removed limit around number of rules.
+
+= 2.7.2 =
+* 2013-10-07: Support PHP 5 static function calls, bumping WordPress requirement to 3.2+.
+
+= 2.7.1 =
+* 2013-07-05: Bug fix: Role-based login URLs weren't saving correctly.
+
+= 2.7.0 =
+* 2013-07-04: Add logout redirect URL control per-user, per-role, and per-level
+
+= 2.6.1 =
+* 2012-12-22: Allow editors to manage redirects in WordPress 3.5+ (required capability is now "manage_categories" instead of "manage_links").
+
+= 2.6.0 =
+* 2012-09-22: Added support for URL variable "http_referer" (note the single "r") to redirect the user back to the page that hosted the login form, as long as the login page isn't the standard wp-login.php. There are several caveats to this, such as: If you want to redirect only on certain forms and/or specify a redirect on the standard wp-login.php page, you should modify the form itself to use a "redirect_to" form variable instead.
+
+= 2.5.3 =
+* 2012-06-15: Bug fix: Fallback redirect rule wouldn't update properly if logout URL was blank on MySQL installs with strict mode enabled (thanks kvandekrol!)
+
+= 2.5.2 =
+* 2012-02-06: Bug fix: Fallback redirect rule updates were broken for non-English installs.
+
+= 2.5.1 =
+* 2012-01-17: Bug fix: Redirect after registration back-end code was missed in 2.5.0, and thus that feature wasn't actually working.
+
+= 2.5.0 =
+* 2012-01-15: Added redirect after registration option. Also made plugin settings editable in the WordPress admin panel.
+
+= 2.4.0 =
+* 2012-01-05: Added support for URL variable "postid-23". Also added documentation on how to set up redirect on first login.
+
+= 2.3.0 =
+* 2011-11-06: Added support for URL variable "siteurl" and "homeurl". Also added filter to support custom replacement variables in the URL. See Other Notes / How to Extend for documentation.
+
+= 2.2.0 =
+* 2011-09-21: Support basic custom logout redirect URL for all users only. Future versions will have the same framework for logout redirects as for login redirects.
+
+= 2.1.1 =
+* 2011-08-13: Minor code cleanup. Note: users now need "manage_links" permissions to edit redirect settings by default.
+
+= 2.1.0 =
+* 2011-06-06: Added hooks to facilitate adding your own extensions to the plugin. See Other Notes / How to Extend for documentation.
+
+= 2.0.0 =
+* 2011-03-03: Added option to allow a redirect_to POST or GET variable to take precedence over this plugin's rules.
+
+= 1.9.3 =
+* 2010-12-15: Made plugin translatable. (Thanks Anja!)
+
+= 1.9.2 =
+* 2010-08-20: Bug fix in code syntax.
+
+= 1.9.1 =
+* 2010-08-03: Bug fix for putting the username in the redirect URL.
+
+= 1.9.0 =
+* 2010-08-02: Added support for a separate redirect controller URL for compatibility with Gigya and similar plugins that bypass the regular WordPress login redirect mechanism. See the $rul_use_redirect_controller setting within this plugin.
+
+= 1.8.1 =
+* 2010-05-13: Added proper encoding of username in the redirect URL if the username has spaces.
+
+= 1.8.0 =
+* 2010-03-18: Added the ability to specify a username in the redirect URL for more dynamic URL generation.
+
+= 1.7.3 =
+* 2010-03-04: Minor tweak on settings page for better compatibility with different WordPress URL setups.
+
+= 1.7.2 =
+* 2010-01-11: Plugin now removes its database tables when it is uninstalled, instead of when it is deactivated. This prevents the redirect rules from being deleted when upgrading WordPress automatically.
+
+= 1.7.1 =
+* 2009-10-07: Minor database compatibility tweak. (Thanks KCP!) 
+
+= 1.7.0 =
+* 2009-05-31: Added option $rul_local_only (in the plugin file itself) to bypass the WordPress default limitation of only redirecting to local URLs.
+
+= 1.6.1 =
+* 2009-02-06: Minor database table tweak for better compatibility with different setups. (Thanks David!)
+
+= 1.6.0 =
+* 2008-11-26: Added a function rul_register that acts the same as the wp_register function you see in templates, except that it will return the custom defined admin address
+
+= 1.5.1 =
+* 2008-09-17: Fixed compatibility for sites with a different table prefix setting in wp-config.php. (Thanks Eric!) 

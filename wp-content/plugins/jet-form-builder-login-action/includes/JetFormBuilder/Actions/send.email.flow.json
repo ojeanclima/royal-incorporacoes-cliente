@@ -1,0 +1,14 @@
+[
+	{
+		"type": "send_email",
+		"settings": {
+			"mail_to": "form",
+			"from_field": "_reset_pass_user_email",
+			"subject": "[%CT::SiteName%] Password Reset",
+			"content": "Someone has requested a password reset for the following account:\n\nSite Name: %CT::SiteName%\nUsername: %_reset_pass_user_id|user%\n\n<b>If this was a mistake, ignore this email and nothing will happen.</b>\n\nTo reset your password, visit the following address:\n%_reset_pass_link%"
+		},
+		"events": [
+			"ON.DEFAULT.STATE"
+		]
+	}
+]

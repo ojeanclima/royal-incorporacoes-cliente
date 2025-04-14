@@ -1,0 +1,348 @@
+:root {
+	--cw-border-color: #DCDCDD;
+	--cw-accent-color: #066EA2;
+	--cw-accent-light-color: rgba(0,124,186,.07);
+	--cw-text-color: #23282D;
+	--cw-gray-text: #7B7E81;
+	--cw-ui-color: #bcbcbc;
+}
+
+body .crocoblock-workflow {
+	position: fixed;
+	z-index: 9999;
+	right: 3px;
+	top: 35px;
+	background: #fff;
+	width: 300px;
+	min-width: 250px;
+	min-height: 150px;
+	max-height: 90vh;
+	box-shadow: 0px 2px 6px rgba( 35,40,45,0.07 );
+	border: 1px solid var( --cw-border-color );
+	box-sizing: border-box;
+	padding: 0;
+	overflow: auto;
+	color: var( --cw-text-color );
+	font-family: Roboto,-apple-system,BlinkMacSystemFont,"Segoe UI",Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+	&__drag {
+		width: 100%;
+		height: 24px;
+		position: sticky;
+		left: 0;
+		top: 0;
+		cursor: move;
+		border-bottom: 1px solid var( --cw-border-color );
+		background: #fff;
+		color: var( --cw-ui-color );
+		svg {
+			margin: 2px 0 0 0;
+			path {
+				fill: currentColor;
+			}
+		}
+	}
+	&__resize {
+		width: 12px;
+		height: 12px;
+		position: sticky;
+		left: 0;
+		bottom: 0;
+		cursor: sw-resize;
+		transform: rotate( 0deg );
+		&:after {
+			position: absolute;
+			content: '';
+			bottom: 2px;
+			left: 2px;
+			width: 0px;
+			height: 0px;
+			border-style: solid;
+			border-width: 12px 0 0 12px;
+			border-color: transparent transparent transparent var( --cw-ui-color );
+		}
+	}
+	&__stepper {
+		display: flex;
+		margin: 5px 0 10px;
+		gap: 2px;
+		height: 2px;
+		&-item {
+			background: var( --cw-ui-color );
+			height: 100%;
+			flex: 1 1 auto;
+			opacity: 0.5;
+			&-active {
+				opacity: 1;
+				background: var( --cw-accent-color );
+			}
+		}
+	}
+	&__tooltip {
+		background: #23282D;
+		box-shadow: 0px 1px 4px rgba(35,40,45,0.24);
+		border-radius: 3px;
+		padding: 5px 5px;
+		font-size: 11px;
+		line-height: 15px;
+		color: #fff;
+		bottom: 100%;
+		position: absolute;
+		margin: 0 0 15px -60px;
+		text-align: center;
+		pointer-events: none;
+		opacity: 0;
+		visibility: hidden;
+		width: 120px;
+		left: 50%;
+		box-sizing: border-box;
+		transition: all 150ms linear;
+		z-index: 9999;
+		&:after {
+			top: 100%;
+			left: 50%;
+			margin: 0 0 0 -4px;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 4px 4px 0 4px;
+			border-color: #23282D transparent transparent transparent;
+			content: "";
+			position: absolute;
+		}
+	}
+	button[type="button"]:hover .crocoblock-workflow__tooltip {
+		visibility: visible;
+		opacity: 1;
+		margin-bottom: 10px;
+	}
+
+	// Buttons
+	button[type="button"] {
+		cursor: pointer;
+		background: none;
+		border: 1px solid var( --cw-accent-color );
+		box-shadow: none;
+		padding: 7px 15px;
+		font-size:13px;
+		line-height: 16px;
+		color: var( --cw-accent-color );
+		border-radius: 4px;
+		font-weight: 500;
+		position: relative;
+		&.crocoblock-workflow__close {
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 25px;
+			height: 25px;
+			background: none;
+			border: none;
+			display: flex;
+			padding: 0;
+			justify-content: center;
+			align-items:center;
+			svg {
+				path {
+					fill: var( --cw-ui-color );
+				}
+			}
+			&:hover {
+				path {
+					fill: var( --cw-text-color );
+				}
+			}
+		}
+		&.crocoblock-workflow__prev-step,
+		&.crocoblock-workflow__pause {
+			border-color: transparent;
+			&:hover {
+				background: var( --cw-accent-light-color );
+			}
+		}
+		&.crocoblock-workflow__next-step {
+			background: var( --cw-accent-color );
+			color: #fff;
+			box-shadow: 0px 2px 4px rgba(35,40,45,0.24);
+			&:hover {
+				box-shadow: 0px 2px 4px rgba(35,40,45,0);
+			}
+		}
+		&:disabled {
+			opacity: .7;
+			cursor: default;
+			box-shadow: none;
+		}
+	}
+
+	// misc
+	svg {
+		width:20px;
+		height: 20px;
+		path {
+			fill: currentColor;
+		}
+	}
+
+	&__dependency {
+		&-completed {
+			color: var( --cw-accent-color );
+			display: flex;
+			align-items: flex-start;
+			padding: 0 0 8px;
+			color: #46B450;
+			svg {
+				width:20px;
+				height: 20px;
+				flex: 0 0 20px;
+				margin: 0 5px 0 0;
+			}
+		}
+	}
+	&__go-to-page {
+		text-decoration: underline dashed;
+		&-disabled {
+			pointer-events:none;
+			opacity: .5;
+		}
+	}
+	&__link {
+		display: inline-flex;
+		text-decoration: none;
+		align-items: center;
+		svg {
+			margin: 0 0 0 4px;
+		}
+	}
+}
+body .crocoblock-workflow-data {
+	box-sizing: border-box;
+	padding: 15px 25px 15px 25px;
+	&__title {
+		font-size: 15px;
+		line-height: 20px;
+		font-weight: 500;
+	}
+	&__steps {
+		font-size: 12px;
+		line-height: 20px;
+		padding: 10px 0 0;
+		color: var( --cw-gray-text );
+	}
+	&__name {
+		font-weight: 500;
+		padding: 0 0 8px;
+	}
+	&__description {
+		padding: 0 0 8px;
+		p {
+			margin: 0;
+			& + p {
+				padding: 8px 0 0 0;
+			}
+		}
+		ul {
+			margin: 0;
+			padding: 8px 0;
+			li {
+				margin: 0 0 0 13px;
+				padding: 0;
+				list-style: disc;
+			}
+		}
+	}
+	&__row {
+		padding: 0 0 6px;
+	}
+	&__actions {
+		padding: 10px 0 0 0;
+		display: flex;
+		gap: 3px;
+		button {
+			display: inline-flex;
+			padding: 7px 10px;
+		}
+	}
+}
+
+.crocoblock-workflows-page {
+	font-family: Roboto,-apple-system,BlinkMacSystemFont,"Segoe UI",Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+	max-width: 960px;
+	padding: 5px 0;
+	&__title {
+		display: flex;
+		justify-content:space-between;
+		align-items:center;
+	}
+}
+
+.crocoblock-workflows-list {
+	display: flex;
+	gap: 30px;
+	flex-wrap: wrap;
+}
+
+.crocoblock-workflow-item {
+	background: #fff;
+	box-shadow: 0px 2px 6px rgba(35,40,45,0.07);
+	border-radius: 6px;
+	padding: 20px;
+	box-sizing: border-box;
+	flex: 0 0 calc( 50% - 15px );
+	&__title {
+		font-size: 15px;
+		line-height: 20px;
+		font-weight: 500;
+		padding: 0 0 8px;
+	}
+	&__desc {
+		padding: 0 0 8px;
+	}
+	&__meta {
+		line-height: 20px;
+		display: flex;
+		align-items: center;
+		color: var( --cw-gray-text );
+		svg {
+			margin: 0 5px 0 0;
+			path {
+				fill: currentColor;
+			}
+		}
+	}
+	&__actions {
+		margin: 12px 0 0 0;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__link {
+		text-decoration: none;
+		display: flex;
+		align-items: center;
+		svg {
+			margin: 0 0 0 4px;
+			path {
+				fill: currentColor;
+			}
+		}
+	}
+	&__btn {
+		cursor: pointer;
+		background: none;
+		border: 1px solid var( --cw-accent-color );
+		box-shadow: none;
+		padding: 7px 15px;
+		font-size:13px;
+		line-height: 16px;
+		color: var( --cw-accent-color );
+		border-radius: 4px;
+		font-weight: 500;
+		position: relative;
+		background: var( --cw-accent-color );
+		color: #fff;
+		box-shadow: 0px 2px 4px rgba(35,40,45,0.24);
+		&:hover {
+			box-shadow: 0px 2px 4px rgba(35,40,45,0);
+		}
+	}
+}

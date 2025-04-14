@@ -1,0 +1,718 @@
+# Copyright (C) 2023 LoginWP (Formerly Peter's Login Redirect)
+# This file is distributed under the same license as the LoginWP (Formerly Peter's Login Redirect) package.
+msgid ""
+msgstr ""
+"Project-Id-Version: LoginWP (Formerly Peter's Login Redirect) 3.0.8.5\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/peters-login-"
+"redirect\n"
+"POT-Creation-Date: 2023-02-07 17:13:44+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2023-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: src/core/src/Admin/AbstractSettingsPage.php:30
+msgid "Request Support"
+msgstr ""
+
+#: src/core/src/Admin/AbstractSettingsPage.php:34
+msgid "Pro Upgrade"
+msgstr ""
+
+#: src/core/src/Admin/AbstractSettingsPage.php:38
+msgid "Review"
+msgstr ""
+
+#: src/core/src/Admin/AbstractSettingsPage.php:41
+msgid "Documentation"
+msgstr ""
+
+#: src/core/src/Admin/AbstractSettingsPage.php:81
+msgid "Upgrade to Pro"
+msgstr ""
+
+#: src/core/src/Admin/AbstractSettingsPage.php:85
+msgid "Need Support?"
+msgstr ""
+
+#: src/core/src/Admin/AbstractSettingsPage.php:128
+msgid ""
+"Enhance the power of LoginWP with the Pro version featuring integrations "
+"with many plugins. %sLearn more%s"
+msgstr ""
+
+#: src/core/src/Admin/AbstractSettingsPage.php:135
+msgid "Redirect only on first time login"
+msgstr ""
+
+#: src/core/src/Admin/AbstractSettingsPage.php:136
+msgid "Redirect to referrer or previous page"
+msgstr ""
+
+#: src/core/src/Admin/AbstractSettingsPage.php:137
+msgid "Redirect to currently viewing page"
+msgstr ""
+
+#: src/core/src/Admin/AbstractSettingsPage.php:145
+#: src/core/src/Admin/views/view.pro-conditions.php:58
+msgid "Get LoginWP Pro →"
+msgstr ""
+
+#: src/core/src/Admin/AbstractSettingsPage.php:163
+msgid ""
+"Whether you need help or have a new feature request, let us know. %sRequest "
+"Support%s"
+msgstr ""
+
+#: src/core/src/Admin/AbstractSettingsPage.php:171
+msgid ""
+"Detailed documentation is also available on the plugin website. %sView "
+"Knowledge Base%s"
+msgstr ""
+
+#: src/core/src/Admin/AbstractSettingsPage.php:179
+msgid ""
+"If you are enjoying LoginWP and find it useful, please consider leaving a "
+"★★★★★ review on WordPress.org. %sLeave a Review%s"
+msgstr ""
+
+#: src/core/src/Admin/Admin.php:39
+msgid "Settings – LoginWP"
+msgstr ""
+
+#: src/core/src/Admin/Admin.php:40
+msgid "LoginWP"
+msgstr ""
+
+#: src/core/src/Admin/Admin.php:90
+msgid "Are you sure?"
+msgstr ""
+
+#: src/core/src/Admin/Admin.php:113
+msgid ""
+"Thank you for using LoginWP. Please rate the plugin %1$s on %2$sWordPress.org"
+"%3$s to help us spread the word."
+msgstr ""
+
+#: src/core/src/Admin/Admin.php:134 src/core/src/Admin/SettingsPage.php:29
+#: src/core/src/Admin/SettingsPage.php:35
+msgid "Settings"
+msgstr ""
+
+#: src/core/src/Admin/Admin.php:140 src/core/src/Admin/Admin.php:166
+msgid "Go Premium"
+msgstr ""
+
+#: src/core/src/Admin/Admin.php:160
+msgid "View LoginWP documentation"
+msgstr ""
+
+#: src/core/src/Admin/Admin.php:160
+msgid "Docs"
+msgstr ""
+
+#: src/core/src/Admin/Admin.php:161
+msgid "Visit customer support"
+msgstr ""
+
+#: src/core/src/Admin/Admin.php:161
+msgid "Support"
+msgstr ""
+
+#: src/core/src/Admin/Admin.php:166 src/core/src/Admin/RedirectionsPage.php:499
+msgid "Upgrade to PRO"
+msgstr ""
+
+#: src/core/src/Admin/Admin.php:184
+msgid ""
+"Important news! %1$sPeters Login Redirect%2$s has been rebranded to "
+"%1$sLoginWP%2$s with a new UI. %3$sCheck It Out%5$s | %4$sDismiss Notice%5$s"
+msgstr ""
+
+#: src/core/src/Admin/Admin.php:216
+msgid ""
+"Hey, I noticed you have been using LoginWP (Formerly Peter's Login Redirect) "
+"for a while now - that's awesome! Could you please do me a BIG favor and "
+"give it a %1$s5-star rating on WordPress?%2$s This will help us spread the "
+"word and boost our motivation - thanks!"
+msgstr ""
+
+#: src/core/src/Admin/Admin.php:220
+msgid "Sure! I'd love to give a review"
+msgstr ""
+
+#: src/core/src/Admin/Admin.php:222
+msgid "Dismiss"
+msgstr ""
+
+#: src/core/src/Admin/ProfilePress.php:47
+msgid "There was an error while performing your request."
+msgstr ""
+
+#: src/core/src/Admin/ProfilePress.php:59
+msgid "Could not install plugin. Please download and install manually."
+msgstr ""
+
+#: src/core/src/Admin/ProfilePress.php:59
+msgid ""
+"Could not install addon. Please download from wpforms.com and install "
+"manually."
+msgstr ""
+
+#: src/core/src/Admin/ProfilePress.php:125
+msgid "Plugin installed."
+msgstr ""
+
+#: src/core/src/Admin/ProfilePress.php:125
+msgid "Addon installed."
+msgstr ""
+
+#: src/core/src/Admin/ProfilePress.php:135
+msgid "Plugin installed & activated."
+msgstr ""
+
+#: src/core/src/Admin/ProfilePress.php:135
+msgid "Addon installed & activated."
+msgstr ""
+
+#: src/core/src/Admin/ProfilePress.php:151
+msgid "Plugin activation is disabled for you on this site."
+msgstr ""
+
+#: src/core/src/Admin/ProfilePress.php:160
+msgid "Plugin activated."
+msgstr ""
+
+#: src/core/src/Admin/ProfilePress.php:164
+msgid "Could not activate plugin. Please activate from the Plugins page."
+msgstr ""
+
+#: src/core/src/Admin/ProfilePress.php:172
+msgid "Login Forms"
+msgstr ""
+
+#. translators: %s - Lite plugin download URL.
+#: src/core/src/Admin/ProfilePress.php:207
+msgid ""
+"Could not install plugin. Please <a href=\"%s\">download</a> and install "
+"manually."
+msgstr ""
+
+#. translators: %s - Lite plugin download URL.
+#: src/core/src/Admin/ProfilePress.php:219
+msgid ""
+"Could not activate plugin. Please activate from the <a href=\"%s\">Plugins "
+"page</a>."
+msgstr ""
+
+#: src/core/src/Admin/ProfilePress.php:230
+msgid "Installing..."
+msgstr ""
+
+#: src/core/src/Admin/ProfilePress.php:231
+msgid "Activating..."
+msgstr ""
+
+#: src/core/src/Admin/ProfilePress.php:232
+#: src/core/src/Admin/ProfilePress.php:599
+msgid "ProfilePress Installed & Activated"
+msgstr ""
+
+#: src/core/src/Admin/ProfilePress.php:233
+msgid "Install Now"
+msgstr ""
+
+#: src/core/src/Admin/ProfilePress.php:234
+msgid "Activate Now"
+msgstr ""
+
+#: src/core/src/Admin/ProfilePress.php:235
+msgid "Download Now"
+msgstr ""
+
+#: src/core/src/Admin/ProfilePress.php:236
+msgid "Go to Plugins page"
+msgstr ""
+
+#: src/core/src/Admin/ProfilePress.php:241
+msgid "Go to ProfilePress Settings"
+msgstr ""
+
+#: src/core/src/Admin/ProfilePress.php:475
+msgid "ProfilePress ♥ ProfilePress"
+msgstr ""
+
+#: src/core/src/Admin/ProfilePress.php:476
+msgid "Modern Custom Login Forms & Membership Plugin"
+msgstr ""
+
+#: src/core/src/Admin/ProfilePress.php:477
+msgid ""
+"ProfilePress lets you create beautiful frontend custom login forms, "
+"registration forms, member directories and user profiles. You can also "
+"protect sensitive contents and control user access."
+msgstr ""
+
+#: src/core/src/Admin/ProfilePress.php:500
+msgid "ProfilePress screenshot"
+msgstr ""
+
+#: src/core/src/Admin/ProfilePress.php:501
+msgid ""
+"Beautiful templates for login, registration, password reset & edit profile "
+"edit forms."
+msgstr ""
+
+#: src/core/src/Admin/ProfilePress.php:502
+msgid ""
+"Fine-grained control over what content your users can see based on your "
+"protection rules."
+msgstr ""
+
+#: src/core/src/Admin/ProfilePress.php:503
+msgid ""
+"Restrict access to pages, posts, custom post types, categories, tags and "
+"custom taxonomies."
+msgstr ""
+
+#: src/core/src/Admin/ProfilePress.php:504
+msgid ""
+"Add beautiful user profiles to your site that can be customised to your "
+"specific requirements."
+msgstr ""
+
+#: src/core/src/Admin/ProfilePress.php:505
+msgid ""
+"Create searchable and filterable member directories with avatars and user "
+"info allowing users to find each other."
+msgstr ""
+
+#: src/core/src/Admin/ProfilePress.php:533
+msgid "Step 1"
+msgstr ""
+
+#: src/core/src/Admin/ProfilePress.php:534
+msgid "Install and Activate ProfilePress"
+msgstr ""
+
+#: src/core/src/Admin/ProfilePress.php:535
+msgid "Install ProfilePress from the WordPress.org plugin repository."
+msgstr ""
+
+#: src/core/src/Admin/ProfilePress.php:568
+msgid "Step 2"
+msgstr ""
+
+#: src/core/src/Admin/ProfilePress.php:569
+msgid "Set Up ProfilePress"
+msgstr ""
+
+#: src/core/src/Admin/ProfilePress.php:570
+msgid "Configure and create your first login form."
+msgstr ""
+
+#: src/core/src/Admin/ProfilePress.php:591
+msgid "Install ProfilePress"
+msgstr ""
+
+#: src/core/src/Admin/ProfilePress.php:599
+msgid "Activate ProfilePress"
+msgstr ""
+
+#: src/core/src/Admin/ProfilePress.php:617
+msgid "Start Setup"
+msgstr ""
+
+#: src/core/src/Admin/ProfilePress.php:623
+msgid "Go to ProfilePress settings"
+msgstr ""
+
+#: src/core/src/Admin/ProfilePress.php:644
+msgid "You do not have permission."
+msgstr ""
+
+#: src/core/src/Admin/ProfilePress.php:654
+msgid "Plugin unavailable."
+msgstr ""
+
+#: src/core/src/Admin/RedirectWPList.php:24
+msgid "loginwp_redirect"
+msgstr ""
+
+#: src/core/src/Admin/RedirectWPList.php:25
+msgid "loginwp_redirects"
+msgstr ""
+
+#: src/core/src/Admin/RedirectWPList.php:82
+msgid "No redirection rule found. %sConsider creating one%s"
+msgstr ""
+
+#: src/core/src/Admin/RedirectWPList.php:136
+#: src/core/src/Admin/RedirectWPList.php:159
+msgid "[Not Set]"
+msgstr ""
+
+#: src/core/src/Admin/RedirectWPList.php:141
+msgid "Edit"
+msgstr ""
+
+#: src/core/src/Admin/RedirectWPList.php:142
+#: src/core/src/Admin/RedirectWPList.php:252
+#: src/core/src/Admin/views/include.view.php:61
+msgid "Delete"
+msgstr ""
+
+#: src/core/src/Admin/RedirectWPList.php:221
+#: src/core/src/Admin/views/view.redirect-urls.php:18
+msgid "Login URL"
+msgstr ""
+
+#: src/core/src/Admin/RedirectWPList.php:222
+#: src/core/src/Admin/views/view.redirect-urls.php:26
+msgid "Logout URL"
+msgstr ""
+
+#: src/core/src/Admin/RedirectWPList.php:223
+msgid "Condition"
+msgstr ""
+
+#: src/core/src/Admin/RedirectWPList.php:224
+msgid "Condition Value"
+msgstr ""
+
+#: src/core/src/Admin/RedirectionsPage.php:43
+msgid "Redirections - LoginWP"
+msgstr ""
+
+#: src/core/src/Admin/RedirectionsPage.php:46
+msgid "Redirection "
+msgstr ""
+
+#: src/core/src/Admin/RedirectionsPage.php:52
+msgid "Redirections"
+msgstr ""
+
+#: src/core/src/Admin/RedirectionsPage.php:68
+#: src/core/src/Admin/RedirectionsPage.php:131
+msgid "Rules"
+msgstr ""
+
+#: src/core/src/Admin/RedirectionsPage.php:76
+msgid "Standard"
+msgstr ""
+
+#: src/core/src/Admin/RedirectionsPage.php:90
+msgid "Username"
+msgstr ""
+
+#: src/core/src/Admin/RedirectionsPage.php:97
+msgid "User Role"
+msgstr ""
+
+#: src/core/src/Admin/RedirectionsPage.php:104
+msgid "User Capability"
+msgstr ""
+
+#: src/core/src/Admin/RedirectionsPage.php:146
+msgid "Add New"
+msgstr ""
+
+#: src/core/src/Admin/RedirectionsPage.php:150
+msgid "Go Back"
+msgstr ""
+
+#: src/core/src/Admin/RedirectionsPage.php:163
+msgid "Redirection Rules"
+msgstr ""
+
+#: src/core/src/Admin/RedirectionsPage.php:219
+msgid "Select..."
+msgstr ""
+
+#: src/core/src/Admin/RedirectionsPage.php:263
+msgid "Redirect rule saved successfully"
+msgstr ""
+
+#: src/core/src/Admin/RedirectionsPage.php:266
+msgid "Changes saved"
+msgstr ""
+
+#: src/core/src/Admin/RedirectionsPage.php:275
+msgid "Redirect rule deleted"
+msgstr ""
+
+#: src/core/src/Admin/RedirectionsPage.php:292
+msgid "ERROR: Condition value not specified"
+msgstr ""
+
+#: src/core/src/Admin/RedirectionsPage.php:296
+msgid "ERROR: No Login or Logout URL specified"
+msgstr ""
+
+#: src/core/src/Admin/RedirectionsPage.php:300
+msgid "ERROR: Non-existent username submitted"
+msgstr ""
+
+#: src/core/src/Admin/RedirectionsPage.php:304
+msgid "ERROR: Non-existent role submitted"
+msgstr ""
+
+#: src/core/src/Admin/RedirectionsPage.php:308
+msgid "ERROR: Non-existent level submitted"
+msgstr ""
+
+#: src/core/src/Admin/RedirectionsPage.php:345
+msgid "ERROR: Unknown error editing redirect rule"
+msgstr ""
+
+#: src/core/src/Admin/RedirectionsPage.php:369
+msgid "ERROR: Unknown error when adding the redirect rule"
+msgstr ""
+
+#: src/core/src/Admin/RedirectionsPage.php:406
+#: src/core/src/Admin/RedirectionsPage.php:429
+msgid "ERROR: Unknown problem updating URL"
+msgstr ""
+
+#: src/core/src/Admin/RedirectionsPage.php:476
+msgid "User ID of user"
+msgstr ""
+
+#: src/core/src/Admin/RedirectionsPage.php:477
+msgid "Username of user"
+msgstr ""
+
+#: src/core/src/Admin/RedirectionsPage.php:478
+msgid "Author URL slug or user nicename"
+msgstr ""
+
+#: src/core/src/Admin/RedirectionsPage.php:479
+msgid "Website URL"
+msgstr ""
+
+#: src/core/src/Admin/RedirectionsPage.php:494
+msgid ""
+"With %sLoginWP PRO%s, you can redirect users to the current page they are "
+"logging in from or back to the previous (referrer) page after login."
+msgstr ""
+
+#: src/core/src/Admin/SettingsPage.php:26
+msgid "Settings - LoginWP"
+msgstr ""
+
+#: src/core/src/Admin/SettingsPage.php:49
+#: src/core/src/Admin/SettingsPage.php:67
+msgid "General"
+msgstr ""
+
+#: src/core/src/Admin/SettingsPage.php:59
+msgid "Remove Data on Uninstall"
+msgstr ""
+
+#: src/core/src/Admin/SettingsPage.php:60
+#: src/core/src/Admin/SettingsPageApi.php:1009
+msgid "Activate"
+msgstr ""
+
+#: src/core/src/Admin/SettingsPage.php:61
+msgid ""
+"Check this box if you would like LoginWP to completely remove all of its "
+"data when uninstalled."
+msgstr ""
+
+#: src/core/src/Admin/SettingsPageApi.php:857
+msgid "Code"
+msgstr ""
+
+#: src/core/src/Admin/SettingsPageApi.php:858
+msgid "Preview"
+msgstr ""
+
+#: src/core/src/Admin/SettingsPageApi.php:1080
+#: src/core/src/Admin/views/view.bottom-settings.php:48
+#: src/core/src/Admin/views/view.bottom-settings.php:74
+#: src/core/src/Admin/views/view.bottom-settings.php:116
+msgid "Save Changes"
+msgstr ""
+
+#: src/core/src/Admin/views/include.view.php:15
+msgid "Rule Condition"
+msgstr ""
+
+#: src/core/src/Admin/views/include.view.php:26
+msgid "Redirect URLs"
+msgstr ""
+
+#: src/core/src/Admin/views/include.view.php:40
+msgid "Available Pro Conditions %sUpgrade Now%s"
+msgstr ""
+
+#: src/core/src/Admin/views/include.view.php:67
+msgid "Save Rule"
+msgstr ""
+
+#: src/core/src/Admin/views/view.bottom-settings.php:15
+#: src/core/src/Admin/views/view.redirect-urls.php:6
+msgid "View Available Placeholders"
+msgstr ""
+
+#: src/core/src/Admin/views/view.bottom-settings.php:20
+msgid "All Other Users"
+msgstr ""
+
+#: src/core/src/Admin/views/view.bottom-settings.php:30
+msgid "Login URL:"
+msgstr ""
+
+#: src/core/src/Admin/views/view.bottom-settings.php:38
+msgid "Logout URL:"
+msgstr ""
+
+#: src/core/src/Admin/views/view.bottom-settings.php:57
+msgid "After Registration"
+msgstr ""
+
+#: src/core/src/Admin/views/view.bottom-settings.php:64
+msgid "URL:"
+msgstr ""
+
+#: src/core/src/Admin/views/view.bottom-settings.php:80
+msgid "Redirect Settings"
+msgstr ""
+
+#: src/core/src/Admin/views/view.bottom-settings.php:86
+msgid ""
+"Allow a POST or GET &#34;redirect_to&#34; login variable to take redirect "
+"precedence"
+msgstr ""
+
+#: src/core/src/Admin/views/view.bottom-settings.php:92
+#: src/core/src/Admin/views/view.bottom-settings.php:107
+msgid "Yes"
+msgstr ""
+
+#: src/core/src/Admin/views/view.bottom-settings.php:93
+#: src/core/src/Admin/views/view.bottom-settings.php:108
+msgid "No"
+msgstr ""
+
+#: src/core/src/Admin/views/view.bottom-settings.php:101
+msgid ""
+"Allow a POST or GET &#34;redirect_to&#34; logout variable to take redirect "
+"precedence"
+msgstr ""
+
+#: src/core/src/Admin/views/view.condition-rule.php:15
+msgid "Select a condition"
+msgstr ""
+
+#: src/core/src/Admin/views/view.condition-rule.php:49
+msgid "Order"
+msgstr ""
+
+#: src/core/src/Admin/views/view.pro-conditions.php:4
+msgid ""
+"Redirect users to a specific URL only if they are logging in for the first "
+"time"
+msgstr ""
+
+#: src/core/src/Admin/views/view.pro-conditions.php:7
+msgid "Purchased Product"
+msgstr ""
+
+#: src/core/src/Admin/views/view.pro-conditions.php:8
+msgid "Purchased Product Category"
+msgstr ""
+
+#: src/core/src/Admin/views/view.pro-conditions.php:9
+msgid "Active User Subscription"
+msgstr ""
+
+#: src/core/src/Admin/views/view.pro-conditions.php:10
+msgid "Active Membership Plan"
+msgstr ""
+
+#: src/core/src/Admin/views/view.pro-conditions.php:13
+#: src/core/src/Admin/views/view.pro-conditions.php:17
+#: src/core/src/Admin/views/view.pro-conditions.php:21
+#: src/core/src/Admin/views/view.pro-conditions.php:24
+msgid "Enrolled Course"
+msgstr ""
+
+#: src/core/src/Admin/views/view.pro-conditions.php:14
+msgid "User Group"
+msgstr ""
+
+#: src/core/src/Admin/views/view.pro-conditions.php:18
+msgid "Enrolled Membership"
+msgstr ""
+
+#: src/core/src/Admin/views/view.pro-conditions.php:27
+msgid "Subscribed Membership Plan"
+msgstr ""
+
+#: src/core/src/Admin/views/view.pro-conditions.php:30
+msgid "Subscribed Membership"
+msgstr ""
+
+#: src/core/src/Admin/views/view.pro-conditions.php:33
+msgid "Active Membership Level"
+msgstr ""
+
+#: src/core/src/Admin/views/view.pro-conditions.php:36
+#: src/core/src/Admin/views/view.pro-conditions.php:39
+msgid "Subscribed Membership Level"
+msgstr ""
+
+#: src/core/src/Admin/views/view.pro-conditions.php:42
+#: src/core/src/Admin/views/view.pro-conditions.php:45
+msgid "Website Current Language"
+msgstr ""
+
+#: src/core/src/Functions.php:17
+msgid "Register"
+msgstr ""
+
+#: src/core/src/Functions.php:22
+msgid "Site Admin"
+msgstr ""
+
+#: src/core/src/MoAdminNotice.php:64
+msgid ""
+"Free optin form plugin that will %1$sincrease your email list subscribers"
+"%2$s and keep them engaged with %1$sautomated and schedule newsletters%2$s."
+msgstr ""
+
+#: src/core/src/MoAdminNotice.php:73
+msgid "Install MailOptin Now for Free!"
+msgstr ""
+
+#: src/core/src/MoAdminNotice.php:78
+msgid "Activate MailOptin Now!"
+msgstr ""
+
+#: src/core/src/MoAdminNotice.php:87
+msgid "Dismiss this notice"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "LoginWP (Formerly Peter's Login Redirect)"
+msgstr ""
+
+#. #-#-#-#-#  peters-login-redirect.pot (LoginWP (Formerly Peter's Login Redirect) 3.0.8.5)  #-#-#-#-#
+#. Plugin URI of the plugin/theme
+#. #-#-#-#-#  peters-login-redirect.pot (LoginWP (Formerly Peter's Login Redirect) 3.0.8.5)  #-#-#-#-#
+#. Author URI of the plugin/theme
+msgid "https://loginwp.com"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Redirect users to different URLs based on their role, capability and more."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "LoginWP Team"
+msgstr ""

@@ -1,0 +1,23 @@
+{
+  "name": "loginwp/core",
+  "description": "Core lib for LoginWP",
+  "type": "wordpress-plugin",
+  "autoload": {
+    "psr-4": {
+      "LoginWP\\Core\\": "src/"
+    },
+    "files": [
+      "src/MoAdminNotice.php",
+      "src/Functions.php"
+    ]
+  },
+  "require": {
+    "composer/installers": "~1.0",
+    "collizo4sky/persist-admin-notices-dismissal": "^1.4"
+  },
+  "config": {
+    "platform": {
+      "php": "5.6"
+    }
+  }
+}
