@@ -1,5 +1,3 @@
-Aqui está o conteúdo do README.md com uma formatação aprimorada, tornando-o mais organizado, visualmente agradável e fácil de ler:
-
 ---
 
 # 🏢 Royal Incorporações – Área Restrita
