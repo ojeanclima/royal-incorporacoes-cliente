@@ -1,5 +1,3 @@
----
-
 # 🏢 Royal Incorporações – Área Restrita
 
 **Versão:** 2.0  
