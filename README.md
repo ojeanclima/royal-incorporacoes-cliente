@@ -31,12 +31,10 @@ A estrutura é baseada em **ACF**, **Elementor Pro**, **JetSmartFilters** (apena
 
 - Armazena documentos por cliente.
 - Campos personalizados ACF:  
-  - `arquivo`  
-  - `status`  
-  - `data_de_emissao`  
+  - `gp_upload_do_arquivo`  
+  - `gp_status`  
+  - `gp_vencimento`  
   - `gp_cliente` (usuário)  
-  - `empreendimento`  
-  - `apartamento`
 
 #### 2.4. Taxonomias
 
