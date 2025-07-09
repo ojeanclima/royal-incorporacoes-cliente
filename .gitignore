@@ -45,4 +45,11 @@ wp-config.php
 #
 # Note: If you wish to whitelist themes,
 # uncomment the next line
+<<<<<<< HEAD
 #/wp-content/themes
+=======
+#/wp-content/themes
+
+/wp-content
+/root
+>>>>>>> eaf7d05 (Initialize project with WordPress setup, including Docker configuration, environment variables, and documentation.)

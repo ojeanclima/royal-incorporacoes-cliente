@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🏢 Royal Incorporações – Área Restrita
 
 **Versão:** 2.0  
@@ -126,3 +127,7 @@ A estrutura é baseada em **ACF**, **Elementor Pro**, **JetSmartFilters** (apena
 | Cadastro AJAX de taxonomias            | Campos carregados sem reload               |
 
 ---
+=======
+# royal-incorporacoes-cliente
+Esse projeto visa facilitar a emissão e gestão de guias de pagamento de IPTU 
+>>>>>>> eaf7d05 (Initialize project with WordPress setup, including Docker configuration, environment variables, and documentation.)
