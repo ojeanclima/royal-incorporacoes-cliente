@@ -130,4 +130,9 @@ A estrutura é baseada em **ACF**, **Elementor Pro**, **JetSmartFilters** (apena
 =======
 # royal-incorporacoes-cliente
 Esse projeto visa facilitar a emissão e gestão de guias de pagamento de IPTU 
+<<<<<<< HEAD
 >>>>>>> eaf7d05 (Initialize project with WordPress setup, including Docker configuration, environment variables, and documentation.)
+=======
+
+Vamos atualziar
+>>>>>>> 4c7b76e (Update README.md to include a new section for project updates)
