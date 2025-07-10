@@ -40,7 +40,7 @@ if ( $should_reset_permalinks ) {
 }
 
 if ( ai1wm_validate_plugin_basename( 'oxygen/functions.php' ) ) {
-	echo wp_kses( __( '» <a class="ai1wm-no-underline" href="https://oxygenbuilder.com/documentation/other/importing-exporting/#resigning" target="_blank">Re-sign Oxygen Builder shortcodes</a>.<br />', 'all-in-one-wp-migration' ), ai1wm_allowed_html_tags() );
+	echo wp_kses( __( '» <a class="ai1wm-no-underline" href="https://classic.oxygenbuilder.com/documentation/other/importing-exporting/#resigning" target="_blank">Re-sign Oxygen Builder shortcodes</a>.<br />', 'all-in-one-wp-migration' ), ai1wm_allowed_html_tags() );
 }
 
 echo wp_kses( __( '» <a class="ai1wm-no-underline" href="https://theme-fusion.com/documentation/avada/installation-maintenance/important-update-information/#clear-caches" target="_blank">Reset Avada Fusion Builder cache</a>.<br />', 'all-in-one-wp-migration' ), ai1wm_allowed_html_tags() );

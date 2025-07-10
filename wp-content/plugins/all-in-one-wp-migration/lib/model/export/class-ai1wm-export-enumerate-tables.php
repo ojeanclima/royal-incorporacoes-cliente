@@ -76,6 +76,15 @@ class Ai1wm_Export_Enumerate_Tables {
 			}
 		}
 
+		// Include selected db tables
+		if ( isset( $params['options']['include_db_tables'] ) && ! empty( $params['included_db_tables'] ) ) {
+			foreach ( explode( ',', $params['included_db_tables'] )  as $table_name ) {
+				if ( ai1wm_putcsv( $tables_list, array( $table_name ) ) ) {
+					$total_tables_count++;
+				}
+			}
+		}
+
 		// Set progress
 		Ai1wm_Status::info( __( 'Database tables gathered.', 'all-in-one-wp-migration' ) );
 

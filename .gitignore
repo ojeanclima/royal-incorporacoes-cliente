@@ -49,5 +49,7 @@ wp-config.php
 =======
 #/wp-content/themes
 
-/wp-content
 /root
+
+# Ignora toda a pasta wp-content (incluindo plugins e temas)
+/wp-content/

@@ -48,7 +48,7 @@ class Ai1wm_Import_Confirm {
 		// Confirm message
 		if ( defined( 'WP_CLI' ) ) {
 			$messages[] = sprintf(
-				/* translators: Unlimited extension url. */
+				/* translators: Link to Unlimited Extension */
 				__(
 					'Importing this file will only replace matching content. Other items stay unchanged.
 					Need a full reset first? Try Reset Hub in our Unlimited Extension (%s).
@@ -59,7 +59,7 @@ class Ai1wm_Import_Confirm {
 			);
 		} else {
 			$messages[] = sprintf(
-				/* translators: Unlimited extension url. */
+				/* translators: Link to Unlimited Extension */
 				__(
 					'Importing this file will only replace matching content. Other items stay unchanged.
 					Need a full reset first? Try Reset Hub in our <a href="%s" target="_blank">Unlimited Extension</a>.<br />

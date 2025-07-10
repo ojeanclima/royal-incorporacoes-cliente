@@ -38,6 +38,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<small><?php esc_html_e( '(click to expand)', 'all-in-one-wp-migration' ); ?></small>
 		</h4>
 		<ul>
+			<li><strong><?php esc_html_e( 'Security Options' ); ?></strong></li>
 			<?php if ( ai1wm_can_encrypt() ) : ?>
 				<li class="ai1wm-encrypt-backups-container">
 					<label for="ai1wm-encrypt-backups">
@@ -66,6 +67,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<a href="https://help.servmask.com/knowledgebase/unable-to-encrypt-and-decrypt-backups/" target="_blank"><span class="ai1wm-icon-help"></span></a>
 				</li>
 			<?php endif; ?>
+
+			<li><strong><?php esc_html_e( 'Database Options' ); ?></strong></li>
 			<li>
 				<label for="ai1wm-no-spam-comments">
 					<input type="checkbox" id="ai1wm-no-spam-comments" name="options[no_spam_comments]" />
@@ -79,15 +82,38 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</label>
 			</li>
 			<li>
+				<label for="ai1wm-no-database">
+					<input type="checkbox" id="ai1wm-no-database" name="options[no_database]" />
+					<?php esc_html_e( 'Exclude database', 'all-in-one-wp-migration' ); ?>
+				</label>
+			</li>
+			<li>
+				<label for="ai1wm-no-email-replace">
+					<input type="checkbox" id="ai1wm-no-email-replace" name="options[no_email_replace]" />
+					<?php
+					echo wp_kses(
+						__( 'Do <strong>not</strong> replace email domain', 'all-in-one-wp-migration' ),
+						ai1wm_allowed_html_tags()
+					);
+					?>
+				</label>
+			</li>
+
+			<?php do_action( 'ai1wm_export_exclude_db_tables' ); ?>
+
+			<?php do_action( 'ai1wm_export_include_db_tables' ); ?>
+
+			<li><strong><?php esc_html_e( 'File Options' ); ?></strong></li>
+			<li>
 				<label for="ai1wm-no-media">
 					<input type="checkbox" id="ai1wm-no-media" name="options[no_media]" />
-					<?php esc_html_e( 'Exclude media library (files)', 'all-in-one-wp-migration' ); ?>
+					<?php esc_html_e( 'Exclude media library', 'all-in-one-wp-migration' ); ?>
 				</label>
 			</li>
 			<li>
 				<label for="ai1wm-no-themes">
 					<input type="checkbox" id="ai1wm-no-themes" name="options[no_themes]" />
-					<?php esc_html_e( 'Exclude themes (files)', 'all-in-one-wp-migration' ); ?>
+					<?php esc_html_e( 'Exclude themes', 'all-in-one-wp-migration' ); ?>
 				</label>
 			</li>
 
@@ -96,14 +122,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<li>
 				<label for="ai1wm-no-muplugins">
 					<input type="checkbox" id="ai1wm-no-muplugins" name="options[no_muplugins]" />
-					<?php esc_html_e( 'Exclude must-use plugins (files)', 'all-in-one-wp-migration' ); ?>
+					<?php esc_html_e( 'Exclude must-use plugins', 'all-in-one-wp-migration' ); ?>
 				</label>
 			</li>
 
 			<li>
 				<label for="ai1wm-no-plugins">
 					<input type="checkbox" id="ai1wm-no-plugins" name="options[no_plugins]" />
-					<?php esc_html_e( 'Exclude plugins (files)', 'all-in-one-wp-migration' ); ?>
+					<?php esc_html_e( 'Exclude plugins', 'all-in-one-wp-migration' ); ?>
 				</label>
 			</li>
 
@@ -111,27 +137,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<?php do_action( 'ai1wm_export_cache_files' ); ?>
 
-			<li>
-				<label for="ai1wm-no-database">
-					<input type="checkbox" id="ai1wm-no-database" name="options[no_database]" />
-					<?php esc_html_e( 'Exclude database (sql)', 'all-in-one-wp-migration' ); ?>
-				</label>
-			</li>
-			<li>
-				<label for="ai1wm-no-email-replace">
-					<input type="checkbox" id="ai1wm-no-email-replace" name="options[no_email_replace]" />
-					<?php
-					echo wp_kses(
-						__( 'Do <strong>not</strong> replace email domain (sql)', 'all-in-one-wp-migration' ),
-						ai1wm_allowed_html_tags()
-					);
-					?>
-				</label>
-			</li>
-
 			<?php do_action( 'ai1wm_export_advanced_settings' ); ?>
 
-			<?php do_action( 'ai1wm_export_exclude_db_tables' ); ?>
 		</ul>
 	</div>
 </div>

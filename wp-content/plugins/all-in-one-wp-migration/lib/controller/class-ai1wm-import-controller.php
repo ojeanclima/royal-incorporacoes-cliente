@@ -166,11 +166,11 @@ class Ai1wm_Import_Controller {
 			$static_filters[] = apply_filters( 'ai1wm_import_file', Ai1wm_Template::get_content( 'import/button-file' ) );
 		}
 
-		// Add URL Extension
-		if ( defined( 'AI1WMLE_PLUGIN_NAME' ) ) {
-			$active_filters[] = apply_filters( 'ai1wm_import_url', Ai1wm_Template::get_content( 'import/button-url' ) );
+		// Add Google Drive Extension
+		if ( defined( 'AI1WMGE_PLUGIN_NAME' ) ) {
+			$active_filters[] = apply_filters( 'ai1wm_import_gdrive', Ai1wm_Template::get_content( 'import/button-gdrive' ) );
 		} else {
-			$static_filters[] = apply_filters( 'ai1wm_import_url', Ai1wm_Template::get_content( 'import/button-url' ) );
+			$static_filters[] = apply_filters( 'ai1wm_import_gdrive', Ai1wm_Template::get_content( 'import/button-gdrive' ) );
 		}
 
 		// Add FTP Extension
@@ -187,11 +187,11 @@ class Ai1wm_Import_Controller {
 			$static_filters[] = apply_filters( 'ai1wm_import_dropbox', Ai1wm_Template::get_content( 'import/button-dropbox' ) );
 		}
 
-		// Add Google Drive Extension
-		if ( defined( 'AI1WMGE_PLUGIN_NAME' ) ) {
-			$active_filters[] = apply_filters( 'ai1wm_import_gdrive', Ai1wm_Template::get_content( 'import/button-gdrive' ) );
+		// Add URL Extension
+		if ( defined( 'AI1WMLE_PLUGIN_NAME' ) ) {
+			$active_filters[] = apply_filters( 'ai1wm_import_url', Ai1wm_Template::get_content( 'import/button-url' ) );
 		} else {
-			$static_filters[] = apply_filters( 'ai1wm_import_gdrive', Ai1wm_Template::get_content( 'import/button-gdrive' ) );
+			$static_filters[] = apply_filters( 'ai1wm_import_url', Ai1wm_Template::get_content( 'import/button-url' ) );
 		}
 
 		// Add Amazon S3 Extension
@@ -201,60 +201,11 @@ class Ai1wm_Import_Controller {
 			$static_filters[] = apply_filters( 'ai1wm_import_s3', Ai1wm_Template::get_content( 'import/button-s3' ) );
 		}
 
-		// Add Backblaze B2 Extension
-		if ( defined( 'AI1WMAE_PLUGIN_NAME' ) ) {
-			$active_filters[] = apply_filters( 'ai1wm_import_b2', Ai1wm_Template::get_content( 'import/button-b2' ) );
-		} else {
-			$static_filters[] = apply_filters( 'ai1wm_import_b2', Ai1wm_Template::get_content( 'import/button-b2' ) );
-		}
-
 		// Add OneDrive Extension
 		if ( defined( 'AI1WMOE_PLUGIN_NAME' ) ) {
 			$active_filters[] = apply_filters( 'ai1wm_import_onedrive', Ai1wm_Template::get_content( 'import/button-onedrive' ) );
 		} else {
 			$static_filters[] = apply_filters( 'ai1wm_import_onedrive', Ai1wm_Template::get_content( 'import/button-onedrive' ) );
-		}
-
-		// Add Box Extension
-		if ( defined( 'AI1WMBE_PLUGIN_NAME' ) ) {
-			$active_filters[] = apply_filters( 'ai1wm_import_box', Ai1wm_Template::get_content( 'import/button-box' ) );
-		} else {
-			$static_filters[] = apply_filters( 'ai1wm_import_box', Ai1wm_Template::get_content( 'import/button-box' ) );
-		}
-
-		// Add Mega Extension
-		if ( defined( 'AI1WMEE_PLUGIN_NAME' ) ) {
-			$active_filters[] = apply_filters( 'ai1wm_import_mega', Ai1wm_Template::get_content( 'import/button-mega' ) );
-		} else {
-			$static_filters[] = apply_filters( 'ai1wm_import_mega', Ai1wm_Template::get_content( 'import/button-mega' ) );
-		}
-
-		// Add DigitalOcean Spaces Extension
-		if ( defined( 'AI1WMIE_PLUGIN_NAME' ) ) {
-			$active_filters[] = apply_filters( 'ai1wm_import_digitalocean', Ai1wm_Template::get_content( 'import/button-digitalocean' ) );
-		} else {
-			$static_filters[] = apply_filters( 'ai1wm_import_digitalocean', Ai1wm_Template::get_content( 'import/button-digitalocean' ) );
-		}
-
-		// Add Google Cloud Storage Extension
-		if ( defined( 'AI1WMCE_PLUGIN_NAME' ) ) {
-			$active_filters[] = apply_filters( 'ai1wm_import_gcloud_storage', Ai1wm_Template::get_content( 'import/button-gcloud-storage' ) );
-		} else {
-			$static_filters[] = apply_filters( 'ai1wm_import_gcloud_storage', Ai1wm_Template::get_content( 'import/button-gcloud-storage' ) );
-		}
-
-		// Add Microsoft Azure Extension
-		if ( defined( 'AI1WMZE_PLUGIN_NAME' ) ) {
-			$active_filters[] = apply_filters( 'ai1wm_import_azure_storage', Ai1wm_Template::get_content( 'import/button-azure-storage' ) );
-		} else {
-			$static_filters[] = apply_filters( 'ai1wm_import_azure_storage', Ai1wm_Template::get_content( 'import/button-azure-storage' ) );
-		}
-
-		// Add Amazon Glacier Extension
-		if ( defined( 'AI1WMRE_PLUGIN_NAME' ) ) {
-			$active_filters[] = apply_filters( 'ai1wm_import_glacier', Ai1wm_Template::get_content( 'import/button-glacier' ) );
-		} else {
-			$static_filters[] = apply_filters( 'ai1wm_import_glacier', Ai1wm_Template::get_content( 'import/button-glacier' ) );
 		}
 
 		// Add pCloud Extension
@@ -264,6 +215,55 @@ class Ai1wm_Import_Controller {
 			$static_filters[] = apply_filters( 'ai1wm_import_pcloud', Ai1wm_Template::get_content( 'import/button-pcloud' ) );
 		}
 
+		// Add S3 Client Extension
+		if ( defined( 'AI1WMNE_PLUGIN_NAME' ) ) {
+			$active_filters[] = apply_filters( 'ai1wm_import_s3_client', Ai1wm_Template::get_content( 'import/button-s3-client' ) );
+		} else {
+			$static_filters[] = apply_filters( 'ai1wm_import_s3_client', Ai1wm_Template::get_content( 'import/button-s3-client' ) );
+		}
+
+		// Add Google Cloud Storage Extension
+		if ( defined( 'AI1WMCE_PLUGIN_NAME' ) ) {
+			$active_filters[] = apply_filters( 'ai1wm_import_gcloud_storage', Ai1wm_Template::get_content( 'import/button-gcloud-storage' ) );
+		} else {
+			$static_filters[] = apply_filters( 'ai1wm_import_gcloud_storage', Ai1wm_Template::get_content( 'import/button-gcloud-storage' ) );
+		}
+
+		// Add DigitalOcean Spaces Extension
+		if ( defined( 'AI1WMIE_PLUGIN_NAME' ) ) {
+			$active_filters[] = apply_filters( 'ai1wm_import_digitalocean', Ai1wm_Template::get_content( 'import/button-digitalocean' ) );
+		} else {
+			$static_filters[] = apply_filters( 'ai1wm_import_digitalocean', Ai1wm_Template::get_content( 'import/button-digitalocean' ) );
+		}
+
+		// Add Mega Extension
+		if ( defined( 'AI1WMEE_PLUGIN_NAME' ) ) {
+			$active_filters[] = apply_filters( 'ai1wm_import_mega', Ai1wm_Template::get_content( 'import/button-mega' ) );
+		} else {
+			$static_filters[] = apply_filters( 'ai1wm_import_mega', Ai1wm_Template::get_content( 'import/button-mega' ) );
+		}
+
+		// Add Backblaze B2 Extension
+		if ( defined( 'AI1WMAE_PLUGIN_NAME' ) ) {
+			$active_filters[] = apply_filters( 'ai1wm_import_b2', Ai1wm_Template::get_content( 'import/button-b2' ) );
+		} else {
+			$static_filters[] = apply_filters( 'ai1wm_import_b2', Ai1wm_Template::get_content( 'import/button-b2' ) );
+		}
+
+		// Add Box Extension
+		if ( defined( 'AI1WMBE_PLUGIN_NAME' ) ) {
+			$active_filters[] = apply_filters( 'ai1wm_import_box', Ai1wm_Template::get_content( 'import/button-box' ) );
+		} else {
+			$static_filters[] = apply_filters( 'ai1wm_import_box', Ai1wm_Template::get_content( 'import/button-box' ) );
+		}
+
+		// Add Microsoft Azure Extension
+		if ( defined( 'AI1WMZE_PLUGIN_NAME' ) ) {
+			$active_filters[] = apply_filters( 'ai1wm_import_azure_storage', Ai1wm_Template::get_content( 'import/button-azure-storage' ) );
+		} else {
+			$static_filters[] = apply_filters( 'ai1wm_import_azure_storage', Ai1wm_Template::get_content( 'import/button-azure-storage' ) );
+		}
+
 		// Add WebDAV Extension
 		if ( defined( 'AI1WMWE_PLUGIN_NAME' ) ) {
 			$active_filters[] = apply_filters( 'ai1wm_import_webdav', Ai1wm_Template::get_content( 'import/button-webdav' ) );
@@ -271,11 +271,11 @@ class Ai1wm_Import_Controller {
 			$static_filters[] = apply_filters( 'ai1wm_import_webdav', Ai1wm_Template::get_content( 'import/button-webdav' ) );
 		}
 
-		// Add S3 Client Extension
-		if ( defined( 'AI1WMNE_PLUGIN_NAME' ) ) {
-			$active_filters[] = apply_filters( 'ai1wm_import_s3_client', Ai1wm_Template::get_content( 'import/button-s3-client' ) );
+		// Add Amazon Glacier Extension
+		if ( defined( 'AI1WMRE_PLUGIN_NAME' ) ) {
+			$active_filters[] = apply_filters( 'ai1wm_import_glacier', Ai1wm_Template::get_content( 'import/button-glacier' ) );
 		} else {
-			$static_filters[] = apply_filters( 'ai1wm_import_s3_client', Ai1wm_Template::get_content( 'import/button-s3-client' ) );
+			$static_filters[] = apply_filters( 'ai1wm_import_glacier', Ai1wm_Template::get_content( 'import/button-glacier' ) );
 		}
 
 		return array_merge( $active_filters, $static_filters );

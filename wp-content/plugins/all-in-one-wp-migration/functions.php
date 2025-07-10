@@ -1479,7 +1479,11 @@ function ai1wm_cache_flush() {
  */
 function ai1wm_elementor_cache_flush() {
 	delete_post_meta_by_key( '_elementor_css' );
+	delete_post_meta_by_key( '_elementor_element_cache' );
+	delete_post_meta_by_key( '_elementor_page_assets' );
+
 	delete_option( '_elementor_global_css' );
+	delete_option( '_elementor_assets_data' );
 	delete_option( 'elementor-custom-breakpoints-files' );
 }
 
@@ -2346,30 +2350,31 @@ function ai1wm_allowed_html_tags() {
 
 /**
  * Wrapper for wp_register_style function
- * @param $handle
- * @param $src
- * @param $deps
- * @param $ver
- * @param $media
  *
- * @return void
+ * @param string $handle Name of the stylesheet
+ * @param string $src    Path of the stylesheet
+ * @param array  $deps   An array of registered stylesheet handles this stylesheet depends on
+ * @param mixed  $ver    String specifying stylesheet version number
+ * @param string $media  The media for which this stylesheet has been defined
+ *
+ * @return bool
  */
 function ai1wm_register_style( $handle, $src, $deps = array(), $ver = false, $media = 'all' ) {
 	if ( is_rtl() ) {
 		$src = str_replace( '.min.css', '.min.rtl.css', $src );
 	}
 
-	wp_register_style( $handle, $src, $deps, $ver, $media );
+	return wp_register_style( $handle, $src, $deps, $ver, $media );
 }
 
 /**
  * Wrapper for wp_enqueue_style function
  *
- * @param $handle
- * @param $src
- * @param $deps
- * @param $ver
- * @param $media
+ * @param string $handle Name of the stylesheet
+ * @param string $src    Path of the stylesheet
+ * @param array  $deps   An array of registered stylesheet handles this stylesheet depends on
+ * @param mixed  $ver    String specifying stylesheet version number
+ * @param string $media  The media for which this stylesheet has been defined
  *
  * @return void
  */
@@ -2382,16 +2387,31 @@ function ai1wm_enqueue_style( $handle, $src = '', $deps = array(), $ver = false,
 }
 
 /**
+ * Wrapper for wp_register_script function
+ *
+ * @param string $handle Name of the script
+ * @param string $src    Path of the script
+ * @param array  $deps   An array of registered script handles this script depends on
+ * @param mixed  $ver    String specifying script version number
+ * @param mixed  $args   An array of additional script loading strategies
+ *
+ * @return bool
+ */
+function ai1wm_register_script( $handle, $src, $deps = array(), $ver = false, $args = array() ) {
+	return wp_register_script( $handle, $src, $deps, $ver, $args );
+}
+
+/**
  * Wrapper for wp_enqueue_script function
  *
- * @param $handle
- * @param $src
- * @param $deps
- * @param $ver
- * @param $in_footer
+ * @param string $handle Name of the script
+ * @param string $src    Path of the script
+ * @param array  $deps   An array of registered script handles this script depends on
+ * @param mixed  $ver    String specifying script version number
+ * @param mixed  $args   An array of additional script loading strategies
  *
  * @return void
  */
-function ai1wm_enqueue_script( $handle, $src = '', $deps = array(), $ver = false, $in_footer = false ) {
-	wp_enqueue_script( $handle, $src, $deps, $ver, $in_footer );
+function ai1wm_enqueue_script( $handle, $src = '', $deps = array(), $ver = false, $args = array() ) {
+	wp_enqueue_script( $handle, $src, $deps, $ver, $args );
 }

@@ -92,7 +92,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</a>
 				<div data-tab="google-drive-storage">
 					<h2>
-						<?php esc_html_e( 'Google Drive Storage', 'all-in-one-wp-migration' ); ?> <a href="https://servmask.com/products/google-drive-extension?utm_campaign=schedules&utm_source=wordpress&utm_medium=textlink" target="_blank"><?php esc_html_e( 'Enable this feature', 'all-in-one-wp-migration' ); ?></a>
+						<?php esc_html_e( 'Google Drive Storage', 'all-in-one-wp-migration' ); ?> <a href="https://servmask.com/products/all-in-one-wp-migration-pro?utm_campaign=schedules&utm_source=wordpress&utm_medium=textlink" target="_blank"><?php esc_html_e( 'Enable this feature', 'all-in-one-wp-migration' ); ?></a>
 					</h2>
 					<img src="<?php echo esc_url( wp_make_link_relative( AI1WM_URL ) . '/lib/view/assets/img/schedules/google-drive-storage.png?v=' . AI1WM_VERSION ); ?>" />
 					<p><?php esc_html_e( 'Benefit from the robustness of Google Drive. Schedule your backups to be saved directly to your Google Drive account. Simple, secure, and integrated into a platform you already use.', 'all-in-one-wp-migration' ); ?></p>
@@ -105,7 +105,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</a>
 				<div data-tab="dropbox-storage">
 					<h2>
-						<?php esc_html_e( 'Dropbox Storage', 'all-in-one-wp-migration' ); ?> <a href="https://servmask.com/products/dropbox-extension?utm_campaign=schedules&utm_source=wordpress&utm_medium=textlink" target="_blank"><?php esc_html_e( 'Enable this feature', 'all-in-one-wp-migration' ); ?></a>
+						<?php esc_html_e( 'Dropbox Storage', 'all-in-one-wp-migration' ); ?> <a href="https://servmask.com/products/all-in-one-wp-migration-pro?utm_campaign=schedules&utm_source=wordpress&utm_medium=textlink" target="_blank"><?php esc_html_e( 'Enable this feature', 'all-in-one-wp-migration' ); ?></a>
 					</h2>
 					<img src="<?php echo esc_url( wp_make_link_relative( AI1WM_URL ) . '/lib/view/assets/img/schedules/dropbox-storage.png?v=' . AI1WM_VERSION ); ?>" />
 					<p><?php esc_html_e( 'Leverage the simplicity of Dropbox for your backup needs. Direct your scheduled backups to be stored in Dropbox. It\'s secure, straightforward, and keeps your backups at your fingertips.', 'all-in-one-wp-migration' ); ?></p>
@@ -118,7 +118,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</a>
 				<div data-tab="onedrive-storage">
 					<h2>
-						<?php esc_html_e( 'OneDrive Storage', 'all-in-one-wp-migration' ); ?> <a href="https://servmask.com/products/onedrive-extension?utm_campaign=schedules&utm_source=wordpress&utm_medium=textlink" target="_blank"><?php esc_html_e( 'Enable this feature', 'all-in-one-wp-migration' ); ?></a>
+						<?php esc_html_e( 'OneDrive Storage', 'all-in-one-wp-migration' ); ?> <a href="https://servmask.com/products/all-in-one-wp-migration-pro?utm_campaign=schedules&utm_source=wordpress&utm_medium=textlink" target="_blank"><?php esc_html_e( 'Enable this feature', 'all-in-one-wp-migration' ); ?></a>
 					</h2>
 					<img src="<?php echo esc_url( wp_make_link_relative( AI1WM_URL ) . '/lib/view/assets/img/schedules/onedrive-storage.png?v=' . AI1WM_VERSION ); ?>" />
 					<p><?php esc_html_e( 'Harness the power of OneDrive for your backups. Set up your scheduled backups to be saved directly in your OneDrive. It\'s secure, integrated with your Microsoft account, and keeps your data readily accessible.', 'all-in-one-wp-migration' ); ?></p>
@@ -131,7 +131,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</a>
 				<div data-tab="ftp-storage">
 					<h2>
-						<?php esc_html_e( 'FTP Storage', 'all-in-one-wp-migration' ); ?> <a href="https://servmask.com/products/ftp-extension?utm_campaign=schedules&utm_source=wordpress&utm_medium=textlink" target="_blank"><?php esc_html_e( 'Enable this feature', 'all-in-one-wp-migration' ); ?></a>
+						<?php esc_html_e( 'FTP Storage', 'all-in-one-wp-migration' ); ?> <a href="https://servmask.com/products/all-in-one-wp-migration-pro?utm_campaign=schedules&utm_source=wordpress&utm_medium=textlink" target="_blank"><?php esc_html_e( 'Enable this feature', 'all-in-one-wp-migration' ); ?></a>
 					</h2>
 					<img src="<?php echo esc_url( wp_make_link_relative( AI1WM_URL ) . '/lib/view/assets/img/schedules/ftp-storage.png?v=' . AI1WM_VERSION ); ?>" />
 					<p><?php esc_html_e( 'Enjoy the flexibility of FTP storage. Direct your scheduled backups to your own FTP server. You\'ll have full control over your data, providing you with a versatile and private storage solution.', 'all-in-one-wp-migration' ); ?></p>
@@ -144,7 +144,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</a>
 				<div data-tab="more-storage-providers">
 					<h2>
-						<?php esc_html_e( 'More Storage Providers', 'all-in-one-wp-migration' ); ?> <a href="https://servmask.com/products?utm_campaign=schedules&utm_source=wordpress&utm_medium=textlink" target="_blank"><?php esc_html_e( 'Enable this feature', 'all-in-one-wp-migration' ); ?></a>
+						<?php esc_html_e( 'More Storage Providers', 'all-in-one-wp-migration' ); ?> <a href="https://servmask.com/products/all-in-one-wp-migration-pro?utm_campaign=schedules&utm_source=wordpress&utm_medium=textlink" target="_blank"><?php esc_html_e( 'Enable this feature', 'all-in-one-wp-migration' ); ?></a>
 					</h2>
 					<img src="<?php echo esc_url( wp_make_link_relative( AI1WM_URL ) . '/lib/view/assets/img/schedules/more-storage-providers.png?v=' . AI1WM_VERSION ); ?>" />
 					<p><?php esc_html_e( 'We\'ve got you covered with an array of supported storage providers. Whether you prefer Box, Amazon S3, WebDav or something else, you can choose the one that fits your needs best. Secure your backups exactly where you want them.', 'all-in-one-wp-migration' ); ?></p>

@@ -41,6 +41,8 @@ class Ai1wm_Export_Init {
 			}
 		}
 
+		do_action( 'ai1wm_status_export_init', $params );
+
 		// Set progress
 		Ai1wm_Status::info( __( 'Preparing to export...', 'all-in-one-wp-migration' ) );
 

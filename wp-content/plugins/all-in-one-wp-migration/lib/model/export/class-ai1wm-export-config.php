@@ -147,6 +147,13 @@ class Ai1wm_Export_Config {
 			}
 		}
 
+		// Include selected db tables
+		if ( isset( $params['options']['include_db_tables'], $params['included_db_tables'] ) ) {
+			if ( ( $included_db_tables = explode( ',', $params['included_db_tables'] ) ) ) {
+				$config['Database']['IncludedTables'] = $included_db_tables;
+			}
+		}
+
 		// Set PHP version
 		$config['PHP'] = array( 'Version' => PHP_VERSION, 'System' => PHP_OS, 'Integer' => PHP_INT_SIZE );
 

@@ -80,7 +80,7 @@ class Ai1wm_Export_Themes {
 
 		// Set progress
 		/* translators: 1: Number of files, 2: Progress. */
-		Ai1wm_Status::info( sprintf( __( 'Archiving %1$d theme files...<br />%1$d%% complete', 'all-in-one-wp-migration' ), $total_themes_files_count, $progress ) );
+		Ai1wm_Status::info( sprintf( __( 'Archiving %1$d theme files...<br />%2$d%% complete', 'all-in-one-wp-migration' ), $total_themes_files_count, $progress ) );
 
 		// Flag to hold if file data has been processed
 		$completed = true;

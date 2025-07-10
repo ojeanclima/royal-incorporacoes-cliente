@@ -359,7 +359,7 @@ class Ai1wm_Database_Sqlite extends Ai1wm_Database {
 	/**
 	 * Use SQLite transactions
 	 *
-	 * @return bolean
+	 * @return boolean
 	 */
 	protected function use_transactions() {
 		return false;
