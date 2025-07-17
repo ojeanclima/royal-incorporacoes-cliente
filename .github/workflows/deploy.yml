@@ -12,13 +12,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Deploy to server with SFTP
-        uses: appleboy/scp-action@master
+      - name: Deploy to server with FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          host: ${{ secrets.SFTP_HOST }}
-          username: ${{ secrets.SFTP_USERNAME }}
-          password: ${{ secrets.SFTP_PASSWORD }}
-          port: ${{ secrets.SFTP_PORT }} # Geralmente 22 para SFTP (corrigido)
-          source: "wp-content/" # Diretório que você quer enviar
-          target: "/public_html/wp-content" # Caminho no servidor
-          overwrite: true
+          server: "85.31.229.52"
+          username: "u277721048.royalsistema.uios.com.br"
+          password: "~7*Jq!WdXiurw9Jo"
+          port: 21
+          local-dir: ./wp-content/
+          server-dir: public_html/wp-content/
