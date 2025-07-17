@@ -23,8 +23,6 @@ services:
     volumes:
       - db_data:/var/lib/mysql
 
-<<<<<<< HEAD
-=======
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     ports:
@@ -35,6 +33,5 @@ services:
     depends_on:
       - db
 
->>>>>>> eaf7d05 (Initialize project with WordPress setup, including Docker configuration, environment variables, and documentation.)
 volumes:
   db_data:
