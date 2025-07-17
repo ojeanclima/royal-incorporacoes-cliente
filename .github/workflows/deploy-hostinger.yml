@@ -1,0 +1,30 @@
+name: Deploy na Hostinger
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out do repositório
+        uses: actions/checkout@v3
+
+      - name: Instalar dependências e gerar build   # opcional
+        run: |
+          npm ci
+          npm run build
+
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.5.0
+        with:
+          server: ${{ secrets.FTP_HOST }}         # ex: ftp.seudominio.com
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASS }}
+          protocol: ftps                         # ou sftp conforme sua Hostinger
+          port: 21                              # ou 22 para SFTP
+          local-dir: ./                          # pasta a ser enviada (./ = raiz)
+          server-dir: /public_html/             # onde seu site vive no servidor
+          git-ftp-args: --insecure              # necessário para FTPS na Hostinger
