@@ -18,7 +18,7 @@ jobs:
           npm run build
 
       - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@4.5.0
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_HOST }}         # ex: ftp.seudominio.com
           username: ${{ secrets.FTP_USER }}
@@ -27,4 +27,3 @@ jobs:
           port: 21                              # ou 22 para SFTP
           local-dir: ./                          # pasta a ser enviada (./ = raiz)
           server-dir: /public_html/             # onde seu site vive no servidor
-          git-ftp-args: --insecure              # necessário para FTPS na Hostinger
