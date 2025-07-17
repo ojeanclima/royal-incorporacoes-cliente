@@ -15,13 +15,12 @@ jobs:
       - name: Deploy to server with FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: "85.31.229.52"
-          username: "u277721048.royalsistema.uios.com.br"
-          password: "~7*Jq!WdXiurw9Jo"
-          port: 21
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: ${{ secrets.FTP_PORT }}
           local-dir: ./wp-content/
           server-dir: public_html/wp-content/
-          dangerous-clean-slate: true
           exclude: |
             **/.git*
             **/.git*/**
