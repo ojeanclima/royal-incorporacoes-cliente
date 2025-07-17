@@ -4,8 +4,9 @@
   "description": "**Versão:** 2.0   **Data:** 16/05/2025   **Responsável Técnico:** Jean Carlos – UIOS Soluções Digitais",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "build": "react-scripts build",
+  "test": "echo \"Error: no test specified\" && exit 1"
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ojeanclima/royal-incorporacoes-cliente.git"
