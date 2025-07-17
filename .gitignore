@@ -29,3 +29,10 @@ wp-config.php
 
 # Arquivos de backup
 *backup*
+
+# Ignora os plugins Elementor e Elementor Pro
+/wp-content/plugins/elementor/
+/wp-content/plugins/elementor-pro/
+
+# Ignora o plugin all-in-one-wp-migration
+/wp-content/plugins/all-in-one-wp-migration/
