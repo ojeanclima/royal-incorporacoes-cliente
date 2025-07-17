@@ -1,4 +1,4 @@
-# 🏢 Royal Incorporações – Área Restrita
+# Royal Incorporações – Área Restrita
 
 **Versão:** 2.0  
 **Data:** 16/05/2025  
@@ -6,7 +6,7 @@
 
 ---
 
-## 📚 Descrição do Projeto
+## Descrição do Projeto
 
 O sistema “Royal Incorporações – Área Restrita” é uma plataforma em WordPress voltada para a gestão de guias de pagamento de IPTU. Ele fornece uma área restrita, onde clientes acessam apenas seus documentos e administradores gerenciam cadastros, uploads e filtros de forma centralizada.
 
