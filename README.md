@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 🏢 Royal Incorporações – Área Restrita
 
 **Versão:** 2.0  
@@ -7,132 +6,121 @@
 
 ---
 
-## 🧾 Documentação Geral – Sistema de Área Restrita
+## 📚 Descrição do Projeto
 
-### 📌 1. Visão Geral
-
-Sistema em **WordPress** para gestão de documentos do tipo **IPTU (Custom Post Type)**, com área restrita para clientes e administradores.  
-A estrutura é baseada em **ACF**, **Elementor Pro**, **JetSmartFilters** (apenas JetFilter) e plugins personalizados.
+O sistema “Royal Incorporações – Área Restrita” é uma plataforma em WordPress voltada para a gestão de guias de pagamento de IPTU. Ele fornece uma área restrita, onde clientes acessam apenas seus documentos e administradores gerenciam cadastros, uploads e filtros de forma centralizada.
 
 ---
 
-### ⚙️ 2. Funcionalidades Principais
+## 🧾 1. Funcionalidades Principais
 
-#### 2.1. Tipos de Usuário
+1.1. Tipos de Usuário  
+- **Administrador**: acesso total — cadastra clientes, empreendimentos, apartamentos e documentos IPTU.  
+- **Cliente**: faz login por CPF + data de nascimento e visualiza somente seus próprios documentos.
 
-- **Administrador:** acesso total ao sistema, criação de documentos, cadastro de clientes, empreendimentos e apartamentos.
-- **Cliente:** visualiza apenas seus próprios documentos, filtrados automaticamente por CPF e Data de Nascimento.
+1.2. Autenticação  
+- Plugin **Royal Login CPF + Redirecionamento**.  
+- Campos ACF: `cpf_do_cliente`, `data_de_nascimento_do_cliente`.
 
-#### 2.2. Login por CPF + Data de Nascimento
+1.3. Custom Post Type `iptu`  
+- Armazena guias com metadados ACF:  
+  - `gp_upload_do_arquivo` (arquivo)  
+  - `gp_status` (pendente/pago/vencido)  
+  - `gp_vencimento` (data)  
+  - `gp_cliente` (relação usuário)
 
-- Implementado via plugin `Royal Login CPF + Redirecionamento`.
-- Campos personalizados ACF: `cpf_do_cliente`, `data_de_nascimento_do_cliente`.
+1.4. Taxonomias  
+- **Empreendimento**: categorização por bloco/projeto.  
+- **Apartamento**: subdivisão vinculada ao empreendimento.
 
-#### 2.3. Custom Post Type: `iptu`
+1.5. Filtros e Busca  
+- **JetSmartFilters (JetFilter)**: filtros por status, empreendimento, apartamento e campos ACF com AJAX e shortcode.
 
-- Armazena documentos por cliente.
-- Campos personalizados ACF:  
-  - `gp_upload_do_arquivo`  
-  - `gp_status`  
-  - `gp_vencimento`  
-  - `gp_cliente` (usuário)  
-
-#### 2.4. Taxonomias
-
-- **Empreendimento:** categorização por bloco/projeto.
-- **Apartamento:** categorização adicional associada ao empreendimento.
-
-#### 2.5. Filtros com JetSmartFilters
-
-- Plugin ativo: `JetFilter - Filtro por Cliente ACF`.
-- Filtragem baseada em campos ACF e taxonomias.
-- Suporte a AJAX e Shortcode.
-- Filtros por status, apartamento e empreendimento.
-
-#### 2.6. Painel do Cliente (Elementor Pro)
-
-- Contadores por status (Pendente, Pago, Vencido).
-- Listagem de documentos com botão de download.
-- Renderização via Loop Grid com query condicional (`Royal Elementor Custom Query`).
-
-#### 2.7. Painel do Administrador
-
-- Upload de documentos.
-- Cadastro de clientes.
-- Cadastro/seleção dinâmica de empreendimentos e apartamentos via AJAX.
-- Validação visual e condicional dos campos com **Alpine.js** e **TailwindCSS**.
+1.6. Painéis  
+- **Cliente (Elementor Pro)**: contadores por status, listagem com download, loop grid customizado.  
+- **Administrador**: upload de documentos, cadastro via AJAX, validação com Alpine.js e estilo TailwindCSS.
 
 ---
 
-### 🏗️ 3. Estrutura de Páginas
+## 🏗️ 2. Estrutura de Páginas
 
-| Página                      | Descrição                                                          |
-|-----------------------------|--------------------------------------------------------------------|
-| `/login`                    | Login com CPF e Data de Nascimento                                 |
-| `/dashboard`                | Painel único (visualização condicional: cliente ou administrador)  |
-| `/cadastrar-documento`      | Upload de documentos no CPT `iptu`, vinculando usuário/taxonomia   |
-| `/cadastrar-cliente`        | Cadastro de cliente com CPF e Data de Nascimento                   |
-| `/cadastrar-empreendimento` | Cadastro de termos da taxonomia `empreendimento`                   |
-| `/cadastrar-apartamento`    | Cadastro de termos da taxonomia `apartamento`                      |
-| `/politica-de-privacidade`  | Informações da LGPD                                                |
-| `/ajuda`                    | Central de Ajuda com instruções e dúvidas frequentes               |
-
----
-
-### 🔐 4. Permissões e Fluxo
-
-| Ação                                            | Administrador | Cliente |
-|-------------------------------------------------|:-------------:|:-------:|
-| Login e acesso ao sistema                       | ✅            | ✅      |
-| Upload e cadastro de documentos                 | ✅            | ❌      |
-| Visualização de todos documentos                | ✅            | ❌      |
-| Visualização de documentos próprios             | ✅            | ✅      |
-| Cadastro de clientes                            | ✅            | ❌      |
-| Cadastro de empreendimentos/apartamentos        | ✅            | ❌      |
-| Filtros por status, apartamento, empreendimento | ✅            | ✅      |
+| Rota                        | Descrição                                                                    |
+|-----------------------------|------------------------------------------------------------------------------|
+| `/login`                    | Autenticação por CPF + data de nascimento                                     |
+| `/dashboard`                | Painel único (visão adaptada para cliente ou administrador)                  |
+| `/cadastrar-documento`      | Formulário CPT `iptu` para upload de guias                                   |
+| `/cadastrar-cliente`        | Registro de novo cliente                                                      |
+| `/cadastrar-empreendimento` | Cadastro de termos na taxonomia `empreendimento`                              |
+| `/cadastrar-apartamento`    | Cadastro de termos na taxonomia `apartamento`                                 |
+| `/politica-de-privacidade`  | Informações de conformidade com LGPD                                          |
+| `/ajuda`                    | Central de ajuda com instruções e FAQ                                         |
 
 ---
 
-### 🧩 5. Plugins Ativos Principais
+## 🔐 3. Permissões e Fluxo
 
-| Plugin                              | Função                                                                |
-|-------------------------------------|-----------------------------------------------------------------------|
-| **ACF (Advanced Custom Fields)**    | Gerenciamento de campos personalizados                                |
-| **Elementor Pro**                   | Construção de páginas e exibição dinâmica (Loop Grid)                 |
-| **JetSmartFilters (JetFilter)**     | Filtros baseados em campos ACF                                        |
-| **Royal Elementor Custom Query**    | Query condicional para documentos do usuário logado                   |
-| **Royal Gestão de Documentos**      | Interface administrativa e lógica de cadastro                         |
-| **Royal Login CPF + Redirecionamento**| Login por CPF + Data de Nascimento                                  |
-
----
-
-### 📦 6. Recomendações Futuras
-
-- Visualização direta de PDF sem download.
-- Notificações automáticas por e-mail ao publicar novo documento.
-- Exportação de relatórios (PDF, Excel ou ZIP).
-- Auditoria de acessos e logs detalhados.
-- Dashboard com gráficos e estatísticas de uso/documentos.
+| Ação                                        | Administrador | Cliente |
+|---------------------------------------------|:-------------:|:-------:|
+| Acesso ao sistema                           | ✅            | ✅      |
+| Cadastro de documentos IPTU                 | ✅            | ❌      |
+| Visualização de todos os documentos         | ✅            | ❌      |
+| Visualização de documentos próprios         | ✅            | ✅      |
+| Cadastro de clientes, empreendimentos, aptos | ✅            | ❌      |
+| Aplicação de filtros e busca                | ✅            | ✅      |
 
 ---
 
-### ✅ 7. Homologação e Validação
+## 🧩 4. Plugins Ativos Principais
 
-| Item                                   | Critério de Aceitação                      |
-|----------------------------------------|--------------------------------------------|
-| Login por CPF/Data                     | Validação funcional e segura               |
-| Filtro dinâmico por cliente/status     | Testado com JetSmartFilters                |
-| Upload de documentos com metadados     | OK via formulário ACF                      |
-| Visualização condicional de documentos | Apenas documentos vinculados ao usuário    |
-| Cadastro AJAX de taxonomias            | Campos carregados sem reload               |
+| Plugin                                   | Finalidade                                              |
+|------------------------------------------|---------------------------------------------------------|
+| Advanced Custom Fields (ACF)             | Gerenciamento de campos personalizados                  |
+| Elementor Pro                            | Construção de páginas e exibição dinâmica (Loop Grid)   |
+| JetSmartFilters (JetFilter)              | Filtros dinâmicos por ACF                               |
+| Royal Elementor Custom Query             | Query condicional para documentos do usuário logado     |
+| Royal Gestão de Documentos               | Interface administrativa e lógica de cadastro           |
+| Royal Login CPF + Redirecionamento       | Autenticação customizada via CPF + data de nascimento   |
 
 ---
-=======
-# royal-incorporacoes-cliente
-Esse projeto visa facilitar a emissão e gestão de guias de pagamento de IPTU 
-<<<<<<< HEAD
->>>>>>> eaf7d05 (Initialize project with WordPress setup, including Docker configuration, environment variables, and documentation.)
-=======
 
-Vamos atualziar
->>>>>>> 4c7b76e (Update README.md to include a new section for project updates)
+## ⚙️ 5. Setup e Configuração
+
+1. Clone o repositório  
+   `git clone git@github.com:ojeanclima/royal-incorporacoes-cliente.git`
+
+2. Defina variáveis de ambiente  
+   Crie um arquivo `.env` com DB_NAME, DB_USER, DB_PASS, etc.
+
+3. Containers Docker (opcional)  
+   ```bash
+   docker-compose up -d
+   ```
+
+4. Instale dependências e ative plugins no WordPress.
+
+5. Ajuste URLs via WP-CLI  
+   ```bash
+   wp search-replace 'localhost' 'seu-dominio.com'
+   ```
+
+---
+
+## 🔍 6. Recomendações Futuras
+
+- Visualização inline de PDF sem download  
+- Notificações automáticas por e-mail ao publicar novo documento  
+- Exportação de relatórios (PDF, Excel ou ZIP)  
+- Auditoria de acessos e logs detalhados  
+- Dashboard com gráficos e estatísticas de uso/documentos
+
+---
+
+## 📜 7. Histórico de Versões
+
+| Versão | Data       | Descrição                                                        |
+|--------|------------|------------------------------------------------------------------|
+| 2.0    | 16/05/2025 | Documentação aprimorada e ajustes gerais                         |
+| 1.1    | 10/05/2025 | Atualização do README com seção de updates                       |
+| 1.0    | 01/05/2025 | Inicialização do projeto (WordPress, Docker, variáveis e docs)   |
+
+---
