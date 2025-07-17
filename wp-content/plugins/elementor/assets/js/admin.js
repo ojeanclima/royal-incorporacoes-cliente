@@ -1,4 +1,4 @@
-/*! elementor - v3.28.0 - 01-04-2025 */
+/*! elementor - v3.30.0 - 09-07-2025 */
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -2335,6 +2335,9 @@ var _module3 = _interopRequireDefault(__webpack_require__(/*! elementor/modules/
       var _elementorAdminConfig, _elementorAdminConfig2;
       var canImport = elementorAdminConfig.user.is_administrator || ((_elementorAdminConfig = (_elementorAdminConfig2 = elementorAdminConfig.user.restrictions) === null || _elementorAdminConfig2 === void 0 ? void 0 : _elementorAdminConfig2.includes('json-upload')) !== null && _elementorAdminConfig !== void 0 ? _elementorAdminConfig : false);
       if (!canImport || !elementorCommon.elements.$body.hasClass('post-type-elementor_library')) {
+        return;
+      }
+      if (0 === this.elements.$importNowButton.length) {
         return;
       }
       var self = this,

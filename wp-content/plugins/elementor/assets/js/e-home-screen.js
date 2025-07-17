@@ -1,4 +1,4 @@
-/*! elementor - v3.28.0 - 01-04-2025 */
+/*! elementor - v3.30.0 - 09-07-2025 */
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -254,6 +254,137 @@ CreateNewPageDialog.propTypes = {
 
 /***/ }),
 
+/***/ "../modules/home/assets/js/components/create-with-ai-banner.js":
+/*!*********************************************************************!*\
+  !*** ../modules/home/assets/js/components/create-with-ai-banner.js ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+/* provided dependency */ var PropTypes = __webpack_require__(/*! prop-types */ "../node_modules/prop-types/index.js");
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "../node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+var _typeof = __webpack_require__(/*! @babel/runtime/helpers/typeof */ "../node_modules/@babel/runtime/helpers/typeof.js");
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports["default"] = void 0;
+var _react = _interopRequireWildcard(__webpack_require__(/*! react */ "react"));
+var _slicedToArray2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ "../node_modules/@babel/runtime/helpers/slicedToArray.js"));
+var _objectDestructuringEmpty2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/objectDestructuringEmpty */ "../node_modules/@babel/runtime/helpers/objectDestructuringEmpty.js"));
+var _extends2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/extends */ "../node_modules/@babel/runtime/helpers/extends.js"));
+var _ui = __webpack_require__(/*! @elementor/ui */ "@elementor/ui");
+var _Typography = _interopRequireDefault(__webpack_require__(/*! @elementor/ui/Typography */ "@elementor/ui/Typography"));
+var _Button = _interopRequireDefault(__webpack_require__(/*! @elementor/ui/Button */ "@elementor/ui/Button"));
+function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
+function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
+var CreateWithAIBanner = function CreateWithAIBanner(_ref) {
+  var props = (0, _extends2.default)({}, ((0, _objectDestructuringEmpty2.default)(_ref), _ref));
+  var createWithAIData = props.createWithAIData;
+  var _useState = (0, _react.useState)(''),
+    _useState2 = (0, _slicedToArray2.default)(_useState, 2),
+    inputValue = _useState2[0],
+    setInputValue = _useState2[1];
+  if (!createWithAIData) {
+    return null;
+  }
+  var title = createWithAIData.title,
+    description = createWithAIData.description,
+    inputPlaceholder = createWithAIData.input_placeholder,
+    buttonTitle = createWithAIData.button_title,
+    buttonCtaUrl = createWithAIData.button_cta_url,
+    backgroundImage = createWithAIData.background_image,
+    utmSource = createWithAIData.utm_source,
+    utmMedium = createWithAIData.utm_medium,
+    utmCampaign = createWithAIData.utm_campaign;
+  var handleInputChange = function handleInputChange(event) {
+    setInputValue(event.target.value);
+  };
+  var getButtonHref = function getButtonHref() {
+    if (!inputValue) {
+      return buttonCtaUrl;
+    }
+    var url = new URL(buttonCtaUrl);
+    url.searchParams.append('prompt', inputValue);
+    url.searchParams.append('utm_source', utmSource);
+    url.searchParams.append('utm_medium', utmMedium);
+    url.searchParams.append('utm_campaign', utmCampaign);
+    return url.toString();
+  };
+  var handleNavigation = function handleNavigation() {
+    if (!inputValue) {
+      return;
+    }
+    window.open(getButtonHref(), '_blank');
+    setInputValue('');
+  };
+  var handleKeyDown = function handleKeyDown(event) {
+    if ('Enter' === event.key) {
+      event.preventDefault();
+      handleNavigation();
+    }
+  };
+  return /*#__PURE__*/_react.default.createElement(_ui.Paper, {
+    elevation: 0,
+    sx: {
+      display: 'flex',
+      flexDirection: 'column',
+      py: 3,
+      px: 4,
+      gap: 2,
+      backgroundImage: "url(".concat(backgroundImage, ")"),
+      backgroundSize: 'cover',
+      backgroundPosition: 'right center',
+      backgroundRepeat: 'no-repeat'
+    }
+  }, /*#__PURE__*/_react.default.createElement(_ui.Stack, {
+    gap: 1,
+    justifyContent: "center"
+  }, /*#__PURE__*/_react.default.createElement(_Typography.default, {
+    variant: "h6"
+  }, title), /*#__PURE__*/_react.default.createElement(_Typography.default, {
+    variant: "body2",
+    color: "secondary"
+  }, description)), /*#__PURE__*/_react.default.createElement(_ui.Box, {
+    sx: {
+      display: 'flex',
+      flexDirection: {
+        xs: 'column',
+        sm: 'row'
+      },
+      gap: 2,
+      mt: 1
+    }
+  }, /*#__PURE__*/_react.default.createElement(_ui.TextField, {
+    fullWidth: true,
+    placeholder: inputPlaceholder,
+    variant: "outlined",
+    color: "secondary",
+    size: "small",
+    sx: {
+      flex: 1
+    },
+    value: inputValue,
+    onChange: handleInputChange,
+    onKeyDown: handleKeyDown
+  }), /*#__PURE__*/_react.default.createElement(_Button.default, {
+    variant: "outlined",
+    size: "small",
+    color: "secondary",
+    startIcon: /*#__PURE__*/_react.default.createElement("span", {
+      className: "eicon-ai"
+    }),
+    onClick: handleNavigation
+  }, buttonTitle)));
+};
+CreateWithAIBanner.propTypes = {
+  createWithAIData: PropTypes.object
+};
+var _default = exports["default"] = CreateWithAIBanner;
+
+/***/ }),
+
 /***/ "../modules/home/assets/js/components/external-links-section.js":
 /*!**********************************************************************!*\
   !*** ../modules/home/assets/js/components/external-links-section.js ***!
@@ -494,6 +625,7 @@ var _sidebarPromotion = _interopRequireDefault(__webpack_require__(/*! ./sidebar
 var _addonsSection = _interopRequireDefault(__webpack_require__(/*! ./addons-section */ "../modules/home/assets/js/components/addons-section.js"));
 var _externalLinksSection = _interopRequireDefault(__webpack_require__(/*! ./external-links-section */ "../modules/home/assets/js/components/external-links-section.js"));
 var _getStartedSection = _interopRequireDefault(__webpack_require__(/*! ./get-started-section */ "../modules/home/assets/js/components/get-started-section.js"));
+var _createWithAiBanner = _interopRequireDefault(__webpack_require__(/*! ./create-with-ai-banner */ "../modules/home/assets/js/components/create-with-ai-banner.js"));
 var HomeScreen = function HomeScreen(props) {
   var hasSidebarPromotion = props.homeScreenData.hasOwnProperty('sidebar_promotion_variants');
   return /*#__PURE__*/ /*  Box wrapper around the Container is needed to neutralize wp-content area left-padding */_react.default.createElement(_ui.Box, {
@@ -534,7 +666,9 @@ var HomeScreen = function HomeScreen(props) {
       flex: 1,
       gap: 3
     }
-  }, /*#__PURE__*/_react.default.createElement(_getStartedSection.default, {
+  }, props.homeScreenData.create_with_ai && /*#__PURE__*/_react.default.createElement(_createWithAiBanner.default, {
+    createWithAIData: props.homeScreenData.create_with_ai
+  }), /*#__PURE__*/_react.default.createElement(_getStartedSection.default, {
     getStartedData: props.homeScreenData.get_started,
     adminUrl: props.adminUrl
   }), /*#__PURE__*/_react.default.createElement(_addonsSection.default, {

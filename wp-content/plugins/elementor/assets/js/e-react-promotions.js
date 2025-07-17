@@ -1,4 +1,4 @@
-/*! elementor - v3.28.0 - 01-04-2025 */
+/*! elementor - v3.30.0 - 09-07-2025 */
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -1240,6 +1240,96 @@ module.exports = ControlBaseView;
 
 /***/ }),
 
+/***/ "../modules/promotions/assets/js/react/app-manager.js":
+/*!************************************************************!*\
+  !*** ../modules/promotions/assets/js/react/app-manager.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "../node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.AppManager = void 0;
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "react"));
+var _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "../node_modules/@babel/runtime/helpers/classCallCheck.js"));
+var _createClass2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/createClass */ "../node_modules/@babel/runtime/helpers/createClass.js"));
+var _app = _interopRequireDefault(__webpack_require__(/*! ./app */ "../modules/promotions/assets/js/react/app.js"));
+var _client = __webpack_require__(/*! react-dom/client */ "../node_modules/react-dom/client.js");
+var AppManager = exports.AppManager = /*#__PURE__*/function () {
+  function AppManager() {
+    (0, _classCallCheck2.default)(this, AppManager);
+    this.promotionInfoTip = null;
+    this.onRoute = function () {};
+  }
+  return (0, _createClass2.default)(AppManager, [{
+    key: "getPromotionData",
+    value: function getPromotionData(promotionType) {
+      return elementorPromotionsData[promotionType] || {};
+    }
+  }, {
+    key: "mount",
+    value: function mount(targetNode, selectors) {
+      var _elementor,
+        _elementor$getPrefere,
+        _rootElement$getAttri,
+        _this = this;
+      if (this.promotionInfoTip) {
+        return;
+      }
+      var wrapperElement = targetNode === null || targetNode === void 0 ? void 0 : targetNode.closest(selectors.wrapperElement);
+      var rootElement = wrapperElement === null || wrapperElement === void 0 ? void 0 : wrapperElement.querySelector(selectors.reactAnchor);
+      if (!rootElement) {
+        return;
+      }
+      this.attachEditorEventListeners();
+      this.promotionInfoTip = (0, _client.createRoot)(rootElement);
+      var colorScheme = ((_elementor = elementor) === null || _elementor === void 0 || (_elementor$getPrefere = _elementor.getPreferences) === null || _elementor$getPrefere === void 0 ? void 0 : _elementor$getPrefere.call(_elementor, 'ui_theme')) || 'auto';
+      var isRTL = elementorCommon.config.isRTL;
+      var promotionType = (_rootElement$getAttri = rootElement.getAttribute('data-promotion')) === null || _rootElement$getAttri === void 0 ? void 0 : _rootElement$getAttri.replace('_promotion', '');
+      this.promotionInfoTip.render(/*#__PURE__*/_react.default.createElement(_app.default, {
+        colorScheme: colorScheme,
+        isRTL: isRTL,
+        promotionsData: this.getPromotionData(promotionType),
+        onClose: function onClose() {
+          return _this.unmount();
+        }
+      }));
+    }
+  }, {
+    key: "unmount",
+    value: function unmount() {
+      if (this.promotionInfoTip) {
+        this.detachEditorEventListeners();
+        this.promotionInfoTip.unmount();
+      }
+      this.promotionInfoTip = null;
+    }
+  }, {
+    key: "attachEditorEventListeners",
+    value: function attachEditorEventListeners() {
+      var _this2 = this;
+      this.onRoute = function (component, route) {
+        if (route !== 'panel/elements/categories' && route !== 'panel/editor/content') {
+          return;
+        }
+        _this2.unmount();
+      };
+      $e.routes.on('run:after', this.onRoute);
+    }
+  }, {
+    key: "detachEditorEventListeners",
+    value: function detachEditorEventListeners() {
+      $e.routes.off('run:after', this.onRoute);
+    }
+  }]);
+}();
+
+/***/ }),
+
 /***/ "../modules/promotions/assets/js/react/app.js":
 /*!****************************************************!*\
   !*** ../modules/promotions/assets/js/react/app.js ***!
@@ -1280,7 +1370,7 @@ var App = function App(props) {
         }
       }]
     }
-  }))));
+  }, /*#__PURE__*/_react.default.createElement("span", null)))));
 };
 App.propTypes = {
   colorScheme: PropTypes.oneOf(['auto', 'light', 'dark']),
@@ -1368,7 +1458,14 @@ var PromotionCard = function PromotionCard(_ref) {
     }
   }), /*#__PURE__*/_react.default.createElement(_ui.Stack, {
     px: 2
-  }, /*#__PURE__*/_react.default.createElement(_ui.List, {
+  }, 1 === description.length ? /*#__PURE__*/_react.default.createElement(_ui.Typography, {
+    variant: "body2",
+    color: "secondary",
+    sx: {
+      pt: 1.5,
+      pb: 1
+    }
+  }, description[0]) : /*#__PURE__*/_react.default.createElement(_ui.List, {
     sx: {
       pl: 2
     }
@@ -1421,32 +1518,27 @@ Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
 exports["default"] = void 0;
-var _react = _interopRequireDefault(__webpack_require__(/*! react */ "react"));
 var _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "../node_modules/@babel/runtime/helpers/classCallCheck.js"));
 var _createClass2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/createClass */ "../node_modules/@babel/runtime/helpers/createClass.js"));
 var _possibleConstructorReturn2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "../node_modules/@babel/runtime/helpers/possibleConstructorReturn.js"));
 var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "../node_modules/@babel/runtime/helpers/getPrototypeOf.js"));
 var _inherits2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/inherits */ "../node_modules/@babel/runtime/helpers/inherits.js"));
 var _defineProperty2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "../node_modules/@babel/runtime/helpers/defineProperty.js"));
-var _app = _interopRequireDefault(__webpack_require__(/*! ../app */ "../modules/promotions/assets/js/react/app.js"));
 var _baseData = _interopRequireDefault(__webpack_require__(/*! elementor-controls/base-data */ "../assets/dev/js/editor/controls/base-data.js"));
-var _client = __webpack_require__(/*! react-dom/client */ "../node_modules/react-dom/client.js");
+var _appManager = __webpack_require__(/*! ../app-manager */ "../modules/promotions/assets/js/react/app-manager.js");
 function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
 function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
 var _default = exports["default"] = /*#__PURE__*/function (_ControlBaseDataView) {
-  function _default() {
+  function _default(options) {
     var _this;
     (0, _classCallCheck2.default)(this, _default);
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-    _this = _callSuper(this, _default, [].concat(args));
+    _this = _callSuper(this, _default, [options]);
     (0, _defineProperty2.default)(_this, "promotionInfoTip", null);
     (0, _defineProperty2.default)(_this, "selectors", {
-      switcherElement: '.elementor-control-type-switcher',
+      wrapperElement: '.elementor-control-type-switcher',
       reactAnchor: '.e-promotion-react-wrapper'
     });
-    (0, _defineProperty2.default)(_this, "onRoute", function () {});
+    _this.AppManager = new _appManager.AppManager();
     return _this;
   }
   (0, _inherits2.default)(_default, _ControlBaseDataView);
@@ -1473,62 +1565,7 @@ var _default = exports["default"] = /*#__PURE__*/function (_ControlBaseDataView)
     key: "onClickControlSwitcher",
     value: function onClickControlSwitcher(event) {
       event.stopPropagation();
-      this.mount(event.target);
-    }
-  }, {
-    key: "mount",
-    value: function mount(targetNode) {
-      var _elementor,
-        _elementor$getPrefere,
-        _rootElement$getAttri,
-        _this2 = this;
-      if (this.promotionInfoTip) {
-        return;
-      }
-      var wrapperElement = targetNode === null || targetNode === void 0 ? void 0 : targetNode.closest(this.selectors.switcherElement);
-      var rootElement = wrapperElement === null || wrapperElement === void 0 ? void 0 : wrapperElement.querySelector(this.selectors.reactAnchor);
-      if (!rootElement) {
-        return;
-      }
-      this.attachEditorEventListeners();
-      this.promotionInfoTip = (0, _client.createRoot)(rootElement);
-      var colorScheme = ((_elementor = elementor) === null || _elementor === void 0 || (_elementor$getPrefere = _elementor.getPreferences) === null || _elementor$getPrefere === void 0 ? void 0 : _elementor$getPrefere.call(_elementor, 'ui_theme')) || 'auto',
-        isRTL = elementorCommon.config.isRTL,
-        promotionType = (_rootElement$getAttri = rootElement.getAttribute('data-promotion')) === null || _rootElement$getAttri === void 0 ? void 0 : _rootElement$getAttri.replace('_promotion', '');
-      this.promotionInfoTip.render(/*#__PURE__*/_react.default.createElement(_app.default, {
-        colorScheme: colorScheme,
-        isRTL: isRTL,
-        promotionsData: this.promotionData(promotionType),
-        onClose: function onClose() {
-          return _this2.unmount();
-        }
-      }));
-    }
-  }, {
-    key: "unmount",
-    value: function unmount() {
-      if (this.promotionInfoTip) {
-        this.detachEditorEventListeners();
-        this.promotionInfoTip.unmount();
-      }
-      this.promotionInfoTip = null;
-    }
-  }, {
-    key: "attachEditorEventListeners",
-    value: function attachEditorEventListeners() {
-      var _this3 = this;
-      this.onRoute = function (component, route) {
-        if ('panel/elements/categories' !== route && 'panel/editor/content' !== route) {
-          return;
-        }
-        _this3.unmount();
-      };
-      $e.routes.on('run:after', this.onRoute);
-    }
-  }, {
-    key: "detachEditorEventListeners",
-    value: function detachEditorEventListeners() {
-      $e.routes.off('run:after', this.onRoute);
+      this.AppManager.mount(event.target, this.selectors);
     }
   }]);
 }(_baseData.default);

@@ -1,4 +1,4 @@
-/*! elementor - v3.28.0 - 01-04-2025 */
+/*! elementor - v3.30.0 - 09-07-2025 */
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -141,6 +141,77 @@ var getNotifications = exports.getNotifications = function getNotifications() {
 
 /***/ }),
 
+/***/ "../modules/notifications/assets/js/components/editor-app-bar-link.js":
+/*!****************************************************************************!*\
+  !*** ../modules/notifications/assets/js/components/editor-app-bar-link.js ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+/* provided dependency */ var PropTypes = __webpack_require__(/*! prop-types */ "../node_modules/prop-types/index.js");
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "../node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+var _typeof = __webpack_require__(/*! @babel/runtime/helpers/typeof */ "../node_modules/@babel/runtime/helpers/typeof.js");
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.editorAppBarLink = void 0;
+var _react = _interopRequireWildcard(__webpack_require__(/*! react */ "react"));
+var _slicedToArray2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ "../node_modules/@babel/runtime/helpers/slicedToArray.js"));
+var EditorAppBar = _interopRequireWildcard(__webpack_require__(/*! @elementor/editor-app-bar */ "@elementor/editor-app-bar"));
+var _editorOnButtonClicked = __webpack_require__(/*! ./editor-on-button-clicked */ "../modules/notifications/assets/js/components/editor-on-button-clicked.js");
+var _ui = __webpack_require__(/*! @elementor/ui */ "@elementor/ui");
+var _i18n = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+var _SpeakerphoneIcon = _interopRequireDefault(__webpack_require__(/*! @elementor/icons/SpeakerphoneIcon */ "@elementor/icons/SpeakerphoneIcon"));
+function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
+function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
+var IconWithBadge = function IconWithBadge(_ref) {
+  var invisible = _ref.invisible;
+  return /*#__PURE__*/_react.default.createElement(_ui.Badge, {
+    color: "primary",
+    variant: "dot",
+    invisible: invisible
+  }, /*#__PURE__*/_react.default.createElement(_SpeakerphoneIcon.default, null));
+};
+IconWithBadge.propTypes = {
+  invisible: PropTypes.bool
+};
+var editorAppBarLink = exports.editorAppBarLink = function editorAppBarLink() {
+  var utilitiesMenu = EditorAppBar.utilitiesMenu;
+  utilitiesMenu.registerLink({
+    id: 'app-bar-menu-item-whats-new',
+    priority: 10,
+    useProps: function useProps() {
+      var _useState = (0, _react.useState)(!elementorNotifications.is_unread),
+        _useState2 = (0, _slicedToArray2.default)(_useState, 2),
+        isRead = _useState2[0],
+        setIsRead = _useState2[1];
+      return {
+        title: (0, _i18n.__)("What's New", 'elementor'),
+        icon: function icon() {
+          return /*#__PURE__*/_react.default.createElement(IconWithBadge, {
+            invisible: isRead
+          });
+        },
+        onClick: function onClick() {
+          elementor.editorEvents.dispatchEvent(elementor.editorEvents.config.names.topBar.whatsNew, {
+            location: elementor.editorEvents.config.locations.topBar,
+            secondaryLocation: elementor.editorEvents.config.secondaryLocations['whats-new'],
+            trigger: elementor.editorEvents.config.triggers.click,
+            element: elementor.editorEvents.config.elements.buttonIcon
+          });
+          setIsRead(true);
+          elementorNotifications.is_unread = false;
+          (0, _editorOnButtonClicked.editorOnButtonClicked)('right');
+        }
+      };
+    }
+  });
+};
+
+/***/ }),
+
 /***/ "../modules/notifications/assets/js/components/editor-drawer.js":
 /*!**********************************************************************!*\
   !*** ../modules/notifications/assets/js/components/editor-drawer.js ***!
@@ -249,76 +320,6 @@ var editorV1 = exports.editorV1 = function editorV1() {
       title: __('What\'s New', 'elementor'),
       callback: _editorOnButtonClicked.editorOnButtonClicked
     }, 'navigate_from_page', 'view-page');
-  });
-};
-
-/***/ }),
-
-/***/ "../modules/notifications/assets/js/components/editor-v2.js":
-/*!******************************************************************!*\
-  !*** ../modules/notifications/assets/js/components/editor-v2.js ***!
-  \******************************************************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-"use strict";
-/* provided dependency */ var PropTypes = __webpack_require__(/*! prop-types */ "../node_modules/prop-types/index.js");
-
-
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "../node_modules/@babel/runtime/helpers/interopRequireDefault.js");
-var _typeof = __webpack_require__(/*! @babel/runtime/helpers/typeof */ "../node_modules/@babel/runtime/helpers/typeof.js");
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports.editorV2 = void 0;
-var _react = _interopRequireWildcard(__webpack_require__(/*! react */ "react"));
-var _slicedToArray2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ "../node_modules/@babel/runtime/helpers/slicedToArray.js"));
-var _editorOnButtonClicked = __webpack_require__(/*! ./editor-on-button-clicked */ "../modules/notifications/assets/js/components/editor-on-button-clicked.js");
-var _ui = __webpack_require__(/*! @elementor/ui */ "@elementor/ui");
-var _i18n = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-var _SpeakerphoneIcon = _interopRequireDefault(__webpack_require__(/*! @elementor/icons/SpeakerphoneIcon */ "@elementor/icons/SpeakerphoneIcon"));
-function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
-function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
-var IconWithBadge = function IconWithBadge(_ref) {
-  var invisible = _ref.invisible;
-  return /*#__PURE__*/_react.default.createElement(_ui.Badge, {
-    color: "primary",
-    variant: "dot",
-    invisible: invisible
-  }, /*#__PURE__*/_react.default.createElement(_SpeakerphoneIcon.default, null));
-};
-IconWithBadge.propTypes = {
-  invisible: PropTypes.bool
-};
-var editorV2 = exports.editorV2 = function editorV2() {
-  var utilitiesMenu = window.elementorV2.editorAppBar.utilitiesMenu;
-  utilitiesMenu.registerLink({
-    id: 'app-bar-menu-item-whats-new',
-    priority: 10,
-    useProps: function useProps() {
-      var _useState = (0, _react.useState)(!elementorNotifications.is_unread),
-        _useState2 = (0, _slicedToArray2.default)(_useState, 2),
-        isRead = _useState2[0],
-        setIsRead = _useState2[1];
-      return {
-        title: (0, _i18n.__)("What's New", 'elementor'),
-        icon: function icon() {
-          return /*#__PURE__*/_react.default.createElement(IconWithBadge, {
-            invisible: isRead
-          });
-        },
-        onClick: function onClick() {
-          elementor.editorEvents.dispatchEvent(elementor.editorEvents.config.names.topBar.whatsNew, {
-            location: elementor.editorEvents.config.locations.topBar,
-            secondaryLocation: elementor.editorEvents.config.secondaryLocations['whats-new'],
-            trigger: elementor.editorEvents.config.triggers.click,
-            element: elementor.editorEvents.config.elements.buttonIcon
-          });
-          setIsRead(true);
-          elementorNotifications.is_unread = false;
-          (0, _editorOnButtonClicked.editorOnButtonClicked)('right');
-        }
-      };
-    }
   });
 };
 
@@ -3343,6 +3344,17 @@ module.exports = React;
 
 "use strict";
 module.exports = ReactDOM;
+
+/***/ }),
+
+/***/ "@elementor/editor-app-bar":
+/*!*******************************************!*\
+  !*** external "elementorV2.editorAppBar" ***!
+  \*******************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = elementorV2.editorAppBar;
 
 /***/ }),
 
@@ -8717,10 +8729,10 @@ var __webpack_exports__ = {};
 
 
 var _editorV = __webpack_require__(/*! ./components/editor-v1 */ "../modules/notifications/assets/js/components/editor-v1.js");
-var _editorV2 = __webpack_require__(/*! ./components/editor-v2 */ "../modules/notifications/assets/js/components/editor-v2.js");
+var _editorAppBarLink = __webpack_require__(/*! ./components/editor-app-bar-link */ "../modules/notifications/assets/js/components/editor-app-bar-link.js");
 var _window;
 if ((_window = window) !== null && _window !== void 0 && (_window = _window.elementorV2) !== null && _window !== void 0 && _window.editorAppBar) {
-  (0, _editorV2.editorV2)();
+  (0, _editorAppBarLink.editorAppBarLink)();
 } else {
   (0, _editorV.editorV1)();
 }

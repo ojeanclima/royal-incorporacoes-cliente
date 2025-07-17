@@ -1,4 +1,4 @@
-/*! elementor - v3.28.0 - 01-04-2025 */
+/*! elementor - v3.30.0 - 09-07-2025 */
 :root {
   color-scheme: dark;
   --e-a-color-white:	#ffffff;
@@ -27,6 +27,7 @@
   --e-a-bg-info:	#0A1A3D;
   --e-a-bg-danger:	#390A0A;
   --e-a-bg-warning:	#311808;
+  --e-a-bg-chip:	#333438;
   --e-a-color-txt:	#D5D8DC;
   --e-a-color-txt-muted:	#9DA5AE;
   --e-a-color-txt-disabled:	#69727D;

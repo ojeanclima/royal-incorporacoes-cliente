@@ -1,4 +1,4 @@
-/*! elementor - v3.28.0 - 01-04-2025 */
+/*! elementor - v3.30.0 - 09-07-2025 */
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -2631,7 +2631,7 @@ module.exports = elementorModules.Module.extend({
       position: {
         my: 'center bottom',
         at: 'center bottom-10',
-        of: '#elementor-panel-content-wrapper',
+        of: '#elementor-panel-inner',
         autoRefresh: true
       },
       hide: {
@@ -2684,8 +2684,12 @@ module.exports = elementorModules.Module.extend({
     var toast = this.getToast();
     toast.setMessage(options.message);
     toast.getElements('buttonsWrapper').empty();
-    if (!this.isPositionValid(options === null || options === void 0 ? void 0 : options.position)) {
+    var isPositionValid = this.isPositionValid(options === null || options === void 0 ? void 0 : options.position);
+    if (!isPositionValid) {
       this.positionToWindow();
+    }
+    if (options !== null && options !== void 0 && options.position && isPositionValid) {
+      toast.setSettings('position', options.position);
     }
     if (options.buttons) {
       options.buttons.forEach(function (button) {
@@ -3378,6 +3382,20 @@ var _default = exports["default"] = /*#__PURE__*/function (_elementorModules$Mod
         }, immediately).done(request.success);
       }
       return deferred;
+    }
+  }, {
+    key: "cancelRequest",
+    value: function cancelRequest(requestId) {
+      var request = this.requests[requestId];
+      if (!request) {
+        return null;
+      }
+      if (request.options.deferred.jqXhr) {
+        return request.options.deferred.jqXhr.abort('Request canceled');
+      }
+      if (request.options.deferred) {
+        return request.options.deferred.reject('Request canceled');
+      }
     }
   }, {
     key: "addRequest",

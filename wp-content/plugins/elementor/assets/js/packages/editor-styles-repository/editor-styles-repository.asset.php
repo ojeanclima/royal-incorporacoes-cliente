@@ -8,9 +8,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 return [
 	'handle' => 'elementor-v2-editor-styles-repository',
 	'deps' => [
+		'elementor-v2-editor-current-user',
 		'elementor-v2-editor-elements',
 		'elementor-v2-editor-v1-adapters',
+		'elementor-v2-schema',
 		'elementor-v2-utils',
 		'react',
+		'wp-i18n',
 	],
 ];

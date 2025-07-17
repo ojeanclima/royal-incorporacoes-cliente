@@ -3,6 +3,7 @@ __( 'Help', 'elementor' );
 __( 'More', 'elementor' );
 __( 'Elementor Logo', 'elementor' );
 __( 'Integrations', 'elementor' );
+__( 'User Preferences', 'elementor' );
 __( 'Theme Builder', 'elementor' );
 __( 'Structure', 'elementor' );
 __( 'Site Settings', 'elementor' );
@@ -12,7 +13,6 @@ __( 'Switch Device', 'elementor' );
 __( '%s (%dpx and up)', 'elementor' );
 // translators: %s: Breakpoint label, %d: Breakpoint size.
 __( '%s (up to %dpx)', 'elementor' );
-__( 'User Preferences', 'elementor' );
 __( 'Keyboard Shortcuts', 'elementor' );
 __( 'History', 'elementor' );
 __( 'Finder', 'elementor' );

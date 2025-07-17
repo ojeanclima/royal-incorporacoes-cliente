@@ -1,4 +1,4 @@
-/*! elementor - v3.28.0 - 01-04-2025 */
+/*! elementor - v3.30.0 - 09-07-2025 */
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -1294,10 +1294,10 @@ var Component = exports["default"] = /*#__PURE__*/function (_$e$modules$Componen
 
 /***/ }),
 
-/***/ "../modules/checklist/assets/js/editor-v-2.js":
-/*!****************************************************!*\
-  !*** ../modules/checklist/assets/js/editor-v-2.js ***!
-  \****************************************************/
+/***/ "../modules/checklist/assets/js/editor-app-bar-link.js":
+/*!*************************************************************!*\
+  !*** ../modules/checklist/assets/js/editor-app-bar-link.js ***!
+  \*************************************************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -1308,7 +1308,7 @@ var _typeof = __webpack_require__(/*! @babel/runtime/helpers/typeof */ "../node_
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.editorV2 = void 0;
+exports.editorAppBarLink = void 0;
 var EditorAppBar = _interopRequireWildcard(__webpack_require__(/*! @elementor/editor-app-bar */ "@elementor/editor-app-bar"));
 var _i18n = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 var React = _interopRequireWildcard(__webpack_require__(/*! react */ "react"));
@@ -1319,7 +1319,7 @@ var _commands = __webpack_require__(/*! ./commands */ "../modules/checklist/asse
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
 var queryClient = new _query.QueryClient();
-var editorV2 = exports.editorV2 = function editorV2() {
+var editorAppBarLink = exports.editorAppBarLink = function editorAppBarLink() {
   var utilitiesMenu = EditorAppBar.utilitiesMenu;
   utilitiesMenu.registerLink({
     id: 'app-bar-menu-item-checklist',
@@ -10177,12 +10177,12 @@ var __webpack_exports__ = {};
 var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "../node_modules/@babel/runtime/helpers/interopRequireDefault.js");
 var _regenerator = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/regenerator */ "../node_modules/@babel/runtime/regenerator/index.js"));
 var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "../node_modules/@babel/runtime/helpers/asyncToGenerator.js"));
-var _editorV = __webpack_require__(/*! ./editor-v-2 */ "../modules/checklist/assets/js/editor-v-2.js");
+var _editorAppBarLink = __webpack_require__(/*! ./editor-app-bar-link */ "../modules/checklist/assets/js/editor-app-bar-link.js");
 var _component = _interopRequireDefault(__webpack_require__(/*! ./component */ "../modules/checklist/assets/js/component.js"));
 var _consts = __webpack_require__(/*! ./utils/consts */ "../modules/checklist/assets/js/utils/consts.js");
 var _functions = __webpack_require__(/*! ./utils/functions */ "../modules/checklist/assets/js/utils/functions.js");
 $e.components.register(new _component.default());
-(0, _editorV.editorV2)();
+(0, _editorAppBarLink.editorAppBarLink)();
 elementorCommon.elements.$window.on('elementor:loaded', elementorLoaded);
 function elementorLoaded() {
   elementor.on('document:loaded', checklistStartup);

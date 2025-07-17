@@ -1,4 +1,4 @@
-/*! elementor - v3.28.0 - 01-04-2025 */
+/*! elementor - v3.30.0 - 09-07-2025 */
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -2085,7 +2085,8 @@ function Header(props) {
   }), /*#__PURE__*/_react.default.createElement("h1", {
     className: "eps-app__title"
   }, props.title)), /*#__PURE__*/_react.default.createElement(_headerButtons.default, {
-    buttons: props.buttons
+    buttons: props.buttons,
+    onClose: props.onClose
   }));
 }
 Header.propTypes = {
@@ -2141,10 +2142,7 @@ function Page(props) {
     title: props.title,
     buttons: props.headerButtons,
     titleRedirectRoute: props.titleRedirectRoute,
-    onClose: function onClose() {
-      var _props$onClose;
-      return (_props$onClose = props.onClose) === null || _props$onClose === void 0 ? void 0 : _props$onClose.call(props);
-    }
+    onClose: props.onClose
   }), /*#__PURE__*/_react.default.createElement("div", {
     className: "eps-app__main"
   }, AppSidebar(), /*#__PURE__*/_react.default.createElement(_content.default, null, props.content)), AppFooter()));
@@ -5023,21 +5021,35 @@ __webpack_require__(/*! ./popover.scss */ "../app/assets/js/ui/molecules/popover
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 
 function Popover(props) {
+  var getArrowPositionClass = function getArrowPositionClass() {
+    switch (props.arrowPosition) {
+      case 'start':
+        return 'eps-popover--arrow-start';
+      case 'end':
+        return 'eps-popover--arrow-end';
+      case 'none':
+        return 'eps-popover--arrow-none';
+      default:
+        return 'eps-popover--arrow-center';
+    }
+  };
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
     className: "eps-popover__background",
     onClick: props.closeFunction
   }), /*#__PURE__*/_react.default.createElement("ul", {
-    className: "eps-popover ".concat(props.className),
+    className: "eps-popover ".concat(getArrowPositionClass(), " ").concat(props.className),
     onClick: props.closeFunction
   }, props.children));
 }
 Popover.propTypes = {
   children: PropTypes.any.isRequired,
   className: PropTypes.string,
-  closeFunction: PropTypes.func
+  closeFunction: PropTypes.func,
+  arrowPosition: PropTypes.oneOf(['start', 'center', 'end', 'none'])
 };
 Popover.defaultProps = {
-  className: ''
+  className: '',
+  arrowPosition: 'center'
 };
 
 /***/ }),

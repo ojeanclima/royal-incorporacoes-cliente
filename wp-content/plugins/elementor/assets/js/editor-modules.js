@@ -1,4 +1,4 @@
-/*! elementor - v3.28.0 - 01-04-2025 */
+/*! elementor - v3.30.0 - 09-07-2025 */
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -1354,8 +1354,9 @@ var EditorModule = elementorModules.Module.extend({
   },
   // TODO: Delete as soon as possible.
   getEditorControlView: function getEditorControlView(name) {
+    var _this$getEditorContro;
     var editor = elementor.getPanelView().getCurrentPageView();
-    return editor.children.findByModelCid(this.getEditorControlModel(name).cid);
+    return editor.children.findByModelCid((_this$getEditorContro = this.getEditorControlModel(name)) === null || _this$getEditorContro === void 0 ? void 0 : _this$getEditorContro.cid);
   },
   // TODO: Delete as soon as possible.
   getEditorControlModel: function getEditorControlModel(name) {

@@ -10,15 +10,18 @@ return [
 	'deps' => [
 		'elementor-v2-editor',
 		'elementor-v2-editor-elements',
+		'elementor-v2-editor-notifications',
 		'elementor-v2-editor-props',
 		'elementor-v2-editor-responsive',
 		'elementor-v2-editor-styles',
 		'elementor-v2-editor-styles-repository',
 		'elementor-v2-editor-v1-adapters',
+		'elementor-v2-twing',
 		'elementor-v2-ui',
 		'elementor-v2-utils',
 		'elementor-v2-wp-media',
 		'react',
 		'react-dom',
+		'wp-i18n',
 	],
 ];

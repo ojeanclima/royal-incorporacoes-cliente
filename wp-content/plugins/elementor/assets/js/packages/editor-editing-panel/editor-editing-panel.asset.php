@@ -9,7 +9,9 @@ return [
 	'handle' => 'elementor-v2-editor-editing-panel',
 	'deps' => [
 		'elementor-v2-editor',
+		'elementor-v2-editor-canvas',
 		'elementor-v2-editor-controls',
+		'elementor-v2-editor-documents',
 		'elementor-v2-editor-elements',
 		'elementor-v2-editor-panels',
 		'elementor-v2-editor-props',
@@ -25,6 +27,7 @@ return [
 		'elementor-v2-session',
 		'elementor-v2-ui',
 		'elementor-v2-utils',
+		'elementor-v2-wp-media',
 		'react',
 		'wp-i18n',
 	],
