@@ -18,7 +18,7 @@ jobs:
           host: ${{ secrets.SFTP_HOST }}
           username: ${{ secrets.SFTP_USERNAME }}
           password: ${{ secrets.SFTP_PASSWORD }}
-          port: ${{ secrets.SFTP_PORT }} # Geralmente 22 para SFTP
+          port: ${{ secrets.SFTP_PORT }} # Geralmente 22 para SFTP (corrigido)
           source: "wp-content/" # Diretório que você quer enviar
           target: "/public_html/wp-content" # Caminho no servidor
           overwrite: true
