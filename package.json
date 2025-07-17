@@ -1,0 +1,20 @@
+{
+  "name": "royal-incorporacoes-cliente",
+  "version": "1.0.0",
+  "description": "**Versão:** 2.0   **Data:** 16/05/2025   **Responsável Técnico:** Jean Carlos – UIOS Soluções Digitais",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ojeanclima/royal-incorporacoes-cliente.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ojeanclima/royal-incorporacoes-cliente/issues"
+  },
+  "homepage": "https://github.com/ojeanclima/royal-incorporacoes-cliente#readme"
+}
