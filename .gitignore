@@ -14,7 +14,7 @@
 wp-config.php
 
 # Temas e plugins de exemplo
-/wp-content/themes/twenty*/
+/wp-content/themes/twenty*/    
 /wp-content/plugins/hello.php
 
 # Uploads e arquivos de log
@@ -24,8 +24,8 @@ wp-config.php
 # Arquivos de sistema
 /.htaccess
 
-# Ignora toda a pasta wp-content (incluindo plugins, temas, uploads, etc.)
+# Ignora toda a pasta wp-content (inclui plugins, temas, uploads, etc.)
 /wp-content/
 
-# Ignora arquivos de backup
+# Arquivos de backup
 *backup*
