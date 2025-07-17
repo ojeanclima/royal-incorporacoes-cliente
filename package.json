@@ -1,18 +1,17 @@
 {
   "name": "royal-incorporacoes-cliente",
-  "version": "1.0.0",
-  "description": "**Versão:** 2.0   **Data:** 16/05/2025   **Responsável Técnico:** Jean Carlos – UIOS Soluções Digitais",
+  "version": "2.0.0",
+  "description": "Plataforma em WordPress para a gestão de guias de pagamento de IPTU, com área restrita para clientes e administradores.",
   "main": "index.js",
   "scripts": {
-  "build": "react-scripts build",
-  "test": "echo \"Error: no test specified\" && exit 1"
-},
+    "test": "echo \"No test specified\""
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ojeanclima/royal-incorporacoes-cliente.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Jean Carlos – UIOS Soluções Digitais",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ojeanclima/royal-incorporacoes-cliente/issues"
