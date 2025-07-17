@@ -2,8 +2,8 @@
   "name": "royal-incorporacoes-cliente",
   "version": "2.0.0",
   "description": "Plataforma em WordPress para a gestão de guias de pagamento de IPTU, com área restrita para clientes e administradores.",
-  "main": "index.js",
   "scripts": {
+    "build": "echo 'Build step not required for a WordPress project.' && exit 0",
     "test": "echo \"No test specified\""
   },
   "repository": {
