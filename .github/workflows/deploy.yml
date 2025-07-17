@@ -1,0 +1,24 @@
+name: Deploy WordPress to Hostinger
+
+on:
+  push:
+    branches:
+      - main # Gatilho para a branch 'main'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to server with SFTP
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.SFTP_HOST }}
+          username: ${{ secrets.SFTP_USERNAME }}
+          password: ${{ secrets.SFTP_PASSWORD }}
+          port: ${{ secrets.SFTP_PORT }} # Geralmente 22 para SFTP
+          source: "wp-content/" # Diretório que você quer enviar
+          target: "/public_html/wp-content" # Caminho no servidor
+          overwrite: true
