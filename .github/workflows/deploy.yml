@@ -21,3 +21,11 @@ jobs:
           port: 21
           local-dir: ./wp-content/
           server-dir: public_html/wp-content/
+          dangerous-clean-slate: true
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/plugins/elementor/**
+            **/plugins/elementor-pro/**
+            **/plugins/all-in-one-wp-migration/**

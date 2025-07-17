@@ -24,7 +24,7 @@ wp-config.php
 # Arquivos de sistema
 /.htaccess
 
-# Ignora toda a pasta wp-content (inclui plugins, temas, uploads, etc.)
+# ignore toda a pasta wp-content para permitir o deploy de temas/plugins customizados.
 /wp-content/
 
 # Arquivos de backup
