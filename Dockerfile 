@@ -1,9 +1,0 @@
-FROM wordpress:latest-
-
-RUN apt-get update && apt-get install -y \
-    nano \
-    git \
-    unzip \
-    && rm -rf /var/lib/apt/lists/*
-
-COPY ./php.ini /usr/local/etc/php/php.ini
